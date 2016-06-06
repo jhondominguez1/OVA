@@ -29,8 +29,8 @@
 		<?php while($fila=mysqli_fetch_array($query)) { ?>
 		<tr>
 			<td><?php echo $fila['nombre_tipo_recurso']; ?></td>
-			<td align="center"><b class="icon-pencil icon-crud"></b></td>
-			<td><span class="icon-music2"></span></td>
+			<td align="center"><b class="icon-pencil"></b></td>
+			<td><span class="icon-trash"></span></td>
 		</tr>
 		<?php } ?>
 	</table>
