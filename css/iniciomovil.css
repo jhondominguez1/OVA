@@ -1,0 +1,204 @@
+#slider {
+    /*colocación y forma del menú*/
+    background: #f9f9f9;
+	width: 100%;
+	margin:3px auto 0 auto;
+	color: #444;
+	}
+
+#slider ul{
+    /*eliminando padding lateral*/
+    padding:0px;
+    /*y espaciado entre apartados*/
+    margin:0px;
+}
+
+/*estilos de menu principal*/
+#slider h3 {
+	font-size: 22px;
+	line-height: 34px;
+	padding: 0 10px;
+    /* hago que los elementos del menú salgan pegados*/
+    margin:0px;
+	/*este fondo es para cuando no hay gradiente*/
+	background: #fff; 
+	color: #000;
+    
+	
+}
+/*efecto luminoso en el texto de los cabeceros
+#slider h3:hover {
+	text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+}*/
+/*spam para los iconos*/
+#slider h3 span {
+	font-size: 15px;
+	margin-right: 10px;
+}
+/*quitamos puntos a las listas*/
+#slider li {
+	list-style-type: none;
+}
+/*aspecto de los enlaces*/
+#slider ul ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 11px;
+	line-height: 27px;
+	display: block;
+	padding: 0 15px;
+	margin: 3px;
+	width: 25%;
+	/*hacemos que la transción sea suave*/
+	transition: all 0.15s;
+}
+/*animación sobre los enlaces*/
+#slider ul ul li a:hover {
+	transition: all 0.55s;
+}
+/*Lets hide the non active LIs by default*/
+#slider ul ul {
+	display: block;
+}
+#slider li.active ul {
+	display: block;
+}
+
+@media screen and (max-width: 766px){
+#slider {
+    /*colocación y forma del menú*/
+    background: #f9f9f9;
+	width: 100%;
+	margin:3px auto 0 auto;
+	color: #444;
+	}
+
+#slider ul{
+    /*eliminando padding lateral*/
+    padding:0px;
+    /*y espaciado entre apartados*/
+    margin:0px;
+}
+
+/*estilos de menu principal*/
+#slider h3 {
+	font-size: 22px;
+	line-height: 34px;
+	padding: 0 10px;
+    cursor: pointer;
+    margin:0px;
+	border-bottom: 1px dashed #777;
+	background: #fff; 
+	color: #000;
+    
+	
+}
+/*efecto luminoso en el texto de los cabeceros
+#slider h3:hover {
+	text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+}*/
+/*spam para los iconos*/
+#slider h3 span {
+	font-size: 15px;
+	margin-right: 10px;
+}
+/*quitamos puntos a las listas*/
+#slider li {
+	list-style-type: none;
+}
+/*aspecto de los enlaces*/
+#slider ul ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 11px;
+	line-height: 27px;
+	display: block;
+	padding: 0 15px;
+	margin: 3px;
+	width: 98%;
+	height: 35px;
+	/*hacemos que la transción sea suave*/
+	transition: all 0.15s;
+}
+/*animación sobre los enlaces*/
+#slider ul ul li a:hover {
+	transition: all 0.55s;
+}
+/*Lets hide the non active LIs by default*/
+#slider ul ul {
+	display: none;
+}
+#slider li.active ul {
+	display: block;
+}
+}
+
+@media screen and (max-width: 468px){
+#slider {
+    /*colocación y forma del menú*/
+    background: #f9f9f9;
+	width: 100%;
+	margin:3px auto 0 auto;
+	color: #444;
+	}
+
+#slider ul{
+    /*eliminando padding lateral*/
+    padding:0px;
+    /*y espaciado entre apartados*/
+    margin:0px;
+}
+
+/*estilos de menu principal*/
+#slider h3 {
+	font-size: 22px;
+	line-height: 34px;
+	padding: 0 10px;
+    cursor: pointer;
+    margin:0px;
+	border-bottom: 1px dashed #777;
+	background: #fff; 
+	color: #000;
+    
+	
+}
+/*efecto luminoso en el texto de los cabeceros
+#slider h3:hover {
+	text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+}*/
+/*spam para los iconos*/
+#slider h3 span {
+	font-size: 15px;
+	margin-right: 10px;
+}
+/*quitamos puntos a las listas*/
+#slider li {
+	list-style-type: none;
+}
+/*aspecto de los enlaces*/
+#slider ul ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 11px;
+	line-height: 27px;
+	display: block;
+	padding: 0 15px;
+	margin: 3px;
+	width: 98%;
+	height: 35px;
+	/*hacemos que la transción sea suave*/
+	transition: all 0.15s;
+}
+/*animación sobre los enlaces*/
+#slider ul ul li a:hover {
+	transition: all 0.55s;
+}
+/*Lets hide the non active LIs by default*/
+#slider ul ul {
+	display: none;
+}
+#slider li.active ul {
+	display: block;
+}
+	
+}
