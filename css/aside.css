@@ -41,6 +41,7 @@
 /*quitamos puntos a las listas*/
 #acordeon li {
 	list-style-type: none;
+        display: block;
 
 }
 /*aspecto de los enlaces*/
