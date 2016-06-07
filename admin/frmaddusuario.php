@@ -1,4 +1,5 @@
 <?php
-echo "falta terminar este archivo";
+include (conex.php);
 ?>
+
 
