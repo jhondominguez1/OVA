@@ -9,5 +9,6 @@ if (isset($_POST['tipo_identificacion']) && !empty($_POST['tipo_identificacion']
 else{
 	echo"<script type=\"text/javascript\">alert('Debe digitar los datos para ser insertados'); window.location='index.php';</script>";
 }
+echo "LINEA DE ENSAYO"
 
 ?>
