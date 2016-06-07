@@ -3,7 +3,7 @@
 	<form role="form" method="post" action="">
   <div class="form-group">
     <label for="nom-recurso">Nombre del recurso</label>
-    <input type="text" required class="form-control" id="ejemplo_email_1" name="nombre_tipo_recurso">
+    <input type="text" required class="form-control" id="" name="nombre_tipo_recurso">
   </div>
   <div class="form-group">
 	<label for="">Descripción</label>
@@ -23,12 +23,14 @@
 		<th colspan="3"> Tipos de Recursos</th>
 		<tr>
 			<td>Nombre</td>
+                        <td>Descripción</td>
 			<td colspan="2" width="30%";>Acciones</td>
 		</tr>
 		<!--Listando los tipos de recursos-->
 		<?php while($fila=mysqli_fetch_array($query)) { ?>
 		<tr>
 			<td><?php echo $fila['nombre_tipo_recurso']; ?></td>
+                        <td><?php echo $fila['descripcion_tipo_recurso']; ?></td>
 			<td align="center"><b class="icon-pencil"></b></td>
 			<td><span class="icon-trash"></span></td>
 		</tr>
