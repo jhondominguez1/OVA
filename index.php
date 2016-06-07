@@ -28,7 +28,9 @@
 					<?php 
 						//incluya aqui su formulario----
 					if (isset($_GET['op'])) {
+                                            $op=$_GET['op'];
 							if ($op==0) require('./admin/admin-tipo-recurso.php');
+                                                        if ($op==1) require('./admin/admin-leccion.php');
 
 
 					}else{
