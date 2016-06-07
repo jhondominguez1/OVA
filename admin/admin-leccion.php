@@ -39,8 +39,8 @@
 		<tr>
 			<td>Nombre</td>
                         <td>Descripción</td>
-                        <td>Curso asignado</td>
-			<td colspan="2" width="30%";>Acciones</td>
+                        <td>Curso asignado</td> 
+			<td colspan="2" width="32%";>Acciones</td>
 		</tr>
 		<!--Código php para  listar las leccions-->
 		<?php while($fila=mysqli_fetch_array($query)) { ?>
