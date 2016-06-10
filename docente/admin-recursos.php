@@ -74,4 +74,35 @@
 	</table>
 </div>
 
+<?php
+//agrendando un nueva lección----
+	if (isset($_POST['btn-add-recurso'])) {
+		$nombre_recurso = $_POST['nombre_recurso'];
+		$id_tipo_recurso = $_POST['id_tipo_recurso'];
+                $link_recurso= $_POST['link_recurso'];
+                $id_leccion= $_POST[' id_leccion'];               
+	//valido que el nombre de la leccion no exista.. para ello debemos hacer la consulta a la base de datos-..
+		$sql = "SELECT * FROM recursos  WHERE id_leccion = $id_leccion and id_tipo_recurso = $id_tipo_recurso";
+		$query = mysqli_query($conexion,$sql);
+		$numrwos=mysqli_num_rows($query);
+		echo $sql;
+		if ($numrwos>0) {
+			echo "<script>
+				alert('El nombre ya existe...');
+				window.location='./?op=1';
+			</script>"	;
+		}else{
+			//si no existe hago el registro----
+                        /*NOTA: Esta tabla requiere el id de curso por tanto se insertara 1 como id_curso, deberá ,modificarse cuando ya
+                        esten los cursos*/
+			$sql ="INSERT INTO leccion VALUES(NULL,'$nombre_leccion','$descripcion_leccion',$id_curso)";
+			$query=mysqli_query($conexion,$sql);
+                        //echo $sql;
+			echo "<script>
+				alert('Datos Agregados con exito..');
+				window.location='./?op=1';
+			</script>"	;	
+			}
+	}
+?>
 
