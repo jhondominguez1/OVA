@@ -1,6 +1,3 @@
-
-
-    
 <html lang="es">
 <?php session_start();
 require('./conex/conexion.php');
