@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
 	//incluyendo archivos necesarios...
-	require('./admin/conexion.php');
+	require('./conex/conexion.php');
 
  ?>
 <html lang="en">
@@ -29,12 +29,12 @@
 						//incluya aqui su formulario----
 					if (isset($_GET['op'])) {
                                             $op=$_GET['op'];
-							if ($op==0) require('./admin/admin-tipo-recurso.php');
-                                                        if ($op==1) require('./admin/admin-leccion.php');
+							if ($op==0) require('./docente/admin-tipo-recurso.php');
+                                                        if ($op==1) require('./docente/admin-leccion.php');
 
 
 					}else{
-						require('./admin/admin-tipo-recurso.php');
+						require('./docente/admin-recursos.php');
 					}
 					
 
