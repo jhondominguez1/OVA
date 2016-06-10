@@ -20,7 +20,7 @@ require('./conex/conexion.php');
 
 
      <div class="panel-heading">
-      <h1>BLOG ESCOLAR</h1>
+      <h1>Perfil Estudiante</h1>
     </div>
 
      <div >
