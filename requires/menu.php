@@ -7,6 +7,7 @@
         <li class="active"><a href="./?op=0">Tipos de recursos <span class="sr-only">(current)</span></a></li>
         <li><a href="./?op=1">Leccione</a></li>
          <li><a href="./?op=2">Respuestas</a></li>
+         <li><a href="./?op=3">Preguntas</a></li>
          <!--    
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
