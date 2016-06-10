@@ -80,7 +80,7 @@
 		$nombre_recurso = $_POST['nombre_recurso'];
 		$id_tipo_recurso = $_POST['id_tipo_recurso'];
                 $link_recurso= $_POST['link_recurso'];
-                $id_leccion= $_POST[' id_leccion'];               
+                $id_leccion= $_POST['id_leccion'];               
 	//valido que el nombre de la leccion no exista.. para ello debemos hacer la consulta a la base de datos-..
 		$sql = "SELECT * FROM recursos  WHERE id_leccion = $id_leccion and id_tipo_recurso = $id_tipo_recurso";
 		$query = mysqli_query($conexion,$sql);
@@ -95,7 +95,7 @@
 			//si no existe hago el registro----
                         /*NOTA: Esta tabla requiere el id de curso por tanto se insertara 1 como id_curso, deberá ,modificarse cuando ya
                         esten los cursos*/
-			$sql ="INSERT INTO leccion VALUES(NULL,'$nombre_leccion','$descripcion_leccion',$id_curso)";
+			$sql ="INSERT INTO recursos VALUES(NULL,'$nombre_recurso','$id_tipo_recurso','$link_recurso','$id_leccion')";
 			$query=mysqli_query($conexion,$sql);
                         //echo $sql;
 			echo "<script>
