@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admindex</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+
+<!--Icons-->
+<script src="js/lumino.glyphs.js"></script>
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><!-- texto del banner-->
+		
+			<div class="navbar-header">
+				
+				<a class="navbar-brand" href="#"><span>Proyect</span>OVA</a>
+			
+			</div>
+							
+		
+	</nav>
+		
+		
+		<!--titulo menu -->
+		
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		<form role="search">
+			<div class="form-group">
+				Bienvenido Administrador
+			</div>
+		</form>
+		
+		<!-- menu -->
+		
+		<ul class="nav menu">
+			<li class="active"><a href="usuarios.html"> Usuarios</a></li>
+			<li><a href="cursos.html"> cursos</a></li>
+			<li><a href="login.html"> login</a></li><!--solo esta para probar el formulario login, esta opcion no existe en el menu administrador-->
+			<li><a href="opcion2.html"> opcion2</a></li>
+			<li><a href="opcion3.html"> opcion3</a></li>
+			<li><a href="opcion4.html"> opcion4</a></li>
+			<li><a href="opcion5.html"> opcion5</a></li>
+			
+			<li role="presentation" class="divider"></li>
+			<li><a href="../index.php"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Log out</a></li>
+		</ul>
+
+	</div><!--imagen casa / inicio-->
+		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+				<li class="active">Inicio</li>
+			</ol>
+		</div><!--fin imagen casa / inicio-->
+		
+		<!--cargar formulario segun la opcion escogida-->
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">TITULO FORMULARIO</div>
+					<div class="panel-body">
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						Contenido formulario
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+								
+		
+	</div>	<!--/.main-->
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script>
+		$(window).on('resize', function () {
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+	</script>	
+</body>
+
+</html>

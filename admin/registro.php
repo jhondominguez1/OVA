@@ -1,5 +1,5 @@
-<?php require_once("includes/conexion.php"); ?>
-<?php include("includes/header.php"); ?>
+<?php require_once("../conex/conexion.php"); ?>
+
  
  <?php
  
