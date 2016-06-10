@@ -3,7 +3,7 @@
     <head> 
        <meta charset="UTF-8">
 <?php
-include ("conexion.php");
+include ("../conex/conexion.php");
 ?>
     </head>
     <body>
