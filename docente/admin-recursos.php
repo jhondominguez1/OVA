@@ -23,7 +23,7 @@
    
    <div class="form-group">
     <label for="nom-recurso">Link del Recurso</label>
-    <input type="text" required class="form-control" id="" name="nombre_recurso">
+    <input type="text" required class="form-control" id="" name="link_recurso">
   </div>         
   <!--###Aqui se listan las lecciones creadas-->          
   <div class="form-group">
@@ -33,14 +33,14 @@
 		$sql_c = "SELECT * FROM leccion";
 		$query_c = mysqli_query($conexion,$sql_c);
      ?>
-    <select class="form-control" name="id_curso">
+    <select class="form-control" name="id_leccion">
        <?php while($fila_c=mysqli_fetch_array($query_c)) {  ?>
         <option value="<?php echo $fila_c['id_leccion'] ?>"><?php echo $fila_c['nombre_leccion'] ?></option>
        <?php } ?>
     </select>
   </div> 
  
-  <button type="submit" class="btn btn-success" name="btn-add-leccion">Enviar</button>
+  <button type="submit" class="btn btn-success" name="btn-add-recurso">Enviar</button>
 </form>
 </div>
 <!--Listando las lecciones que ya estan agregadas-->
