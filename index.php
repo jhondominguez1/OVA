@@ -32,6 +32,7 @@
 							if ($op==0) require('./docente/admin-tipo-recurso.php');
                                                         if ($op==1) require('./docente/admin-leccion.php');
                                                         if ($op==2) require('./docente/admin-recursos.php');
+														if ($op==3) require('./docente/crear-evaluacion.php');
 					}else{
 						require('./docente/admin-recursos.php');
 					}
