@@ -6,6 +6,9 @@
  ?>
  
  <div class="form-add-trec">
+ 	Evaluación <?php
+ 	$sql = "SELECT fk_id_evaluacion FROM preguntas  WHERE nombre_pregunta = $nombre_pregunta";
+ 	$?>
 	<div class="titulo-add-recurso">Agregrar Pregunta</div>
 	<form role="form" method="post" action="">
   <div class="form-group">
