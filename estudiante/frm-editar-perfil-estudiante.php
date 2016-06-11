@@ -10,17 +10,15 @@
 	<link rel="stylesheet" type="text/css" href="fonts/style.css">
 </head>
 <body>
-<!-- aqui se edittara la informacion de perfil del estudiante -->
-<!-- ya esta mostrando la información del estudiante pero co id fija -->
-<!-- se necesita login para traer el id del estudiante y mostrar sus datos -->
-
+<!-- se pone estilos css al formulario y tabla -->
+<!-- aqui se edittara la informacion de perfil del estudiante -->	
 <form method="POST" action="actualizar-perfil-estudiante.php">
 	
-	<table border=1 align="center">
-		<tr >
-			<td colspan=4 align="center">Fórmulario Actualizar Perfil</td>
+	<table border=1 align="center" class="form-add-trec">
+		<tr class="form-group">
+			<td colspan=5 align="center" class="titulo-add-recurso">Fórmulario Actualizar Perfil</td>
 		</tr>
-		<tr align="center">
+		<tr align="center" class="form-group">
 			<td>Tipo Identificación</td>
 			<td>Número identificación</td>
 			<td>Nombres y Apellidos</td>
@@ -35,12 +33,12 @@ $registroest=mysqli_query($conexion,"SELECT id_usuario, tipo_identificacion, num
 while ($row=mysqli_fetch_array($registroest)){
 ?>
 		<input type="hidden" name="id_usuario" value="<?php echo $row['id_usuario'];?>"/>
-		<tr>
-		<td><input type="text" name="tipo_identificacion" value="<?php echo $row['tipo_identificacion'];?>"/></td>
-		<td><input type="text" name="numero_identificacion" value="<?php echo $row['numero_identificacion'];?>"/></td>
-		<td><input type="text" name="nombre_usuario" value="<?php echo $row['nombre_usuario'];?>"/></td>
+		<tr class="form-group">
+		<td><input type="text" name="tipo_identificacion" required class="form-control" value="<?php echo $row['tipo_identificacion'];?>"/></td>
+		<td><input type="text" name="numero_identificacion" required class="form-control" value="<?php echo $row['numero_identificacion'];?>"/></td>
+		<td><input type="text" name="nombre_usuario" required class="form-control" value="<?php echo $row['nombre_usuario'];?>"/></td>
 
-		<td><input type="submit" value="Actualizar Datos"></td>
+		<td><input type="submit" value="Actualizar Datos" class="btn btn-success"></td>
 		</tr>
 
 <?php }?>
