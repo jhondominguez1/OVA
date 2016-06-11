@@ -24,7 +24,7 @@
 			<td>Nombres y Apellidos</td>
 			<td>Actualizar</td>
 		</tr>
-
+<!-- consulta -->
 <?php
 include ("conexion.php");
 $id_usuario=3;
