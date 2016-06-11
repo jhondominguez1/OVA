@@ -10,7 +10,8 @@
 	<link rel="stylesheet" type="text/css" href="fonts/style.css">
 </head>
 <body>
-<!-- aqui se edittara la informacion de perfil del estudiante -->	
+<!-- aqui se edittara la informacion de perfil del estudiante -->
+<!-- ya esta mostrando la información del estudiante pero co id fija -->
 <form method="POST" action="actualizar-perfil-estudiante.php">
 	
 	<table border=1 align="center">
