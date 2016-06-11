@@ -1,0 +1,45 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.form-add-trec{
+	width: 50%;
+	border: 2px solid #85C1E9;
+	padding:10px;
+	border-radius: 5px;
+	background: #F2F3F4;
+}
+.form-add-trec .titulo-add-recurso{
+	width: 100%;
+	border: 2px solid #85C1E9;
+	text-align: center;
+	font-size: 30px;
+	background: #85C1E9;
+	color: #fff;
+	border-radius: 5px 5px 0px 0px;
+}
+.lis-ti-rec{
+	margin: 10px;
+	width:80%;
+	border-radius: 5px;
+	background: #F2F3F4;
+	padding: 15px;
+}
+.lis-ti-rec table{
+	text-align: left;
+	width:100%;
+	font-size: 25px;
+	font-family: "Times New Roman";
+
+	}
+.lis-ti-rec table th{
+	text-align: center;
+	border-bottom: 2px solid #999;
+}
+.lis-ti-rec table tr{
+	text-align: center;
+}
+.lis-ti-rec table tr td{
+	border:1px solid #999;
+	background: #AED6F1;
+}

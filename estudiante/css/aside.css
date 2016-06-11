@@ -1,0 +1,73 @@
+#acordeon {
+    /*colocación y forma del menú*/
+	background: #eaeaea;
+	width: 100%;
+	margin:3px auto 0 auto;
+	color: #999;
+	}
+
+#acordeon ul{
+    /*eliminando padding lateral*/
+    padding:0px;
+    /*y espaciado entre apartados*/
+    margin:0px;
+
+}
+
+/*estilos de menu principal*/
+#acordeon h3 {
+	font-size: 12px;
+	line-height: 34px;
+	padding: 0 10px;
+	color: #555;
+    /* hago que los elementos del menú salgan pegados*/
+    margin:0px;
+	cursor: pointer;
+    /*este fondo es para cuando no hay gradiente*/
+	background: #fff; 
+	border-bottom: 0.1px solid #999;
+    
+	
+}
+/*efecto luminoso en el texto de los cabeceros*/
+#acordeon h3:hover {
+	text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+}
+/*spam para los iconos*/
+#acordeon h3 span {
+	font-size: 16px;
+	margin-right: 10px;
+}
+/*quitamos puntos a las listas*/
+#acordeon li {
+	list-style-type: none;
+        display: block;
+
+}
+/*aspecto de los enlaces*/
+#acordeon ul ul li a {
+	border-bottom:0.3px dashed #999;
+	color: #999;
+	text-decoration: none;
+	font-size: 11px;
+	line-height: 27px;
+	display: block;
+	padding: 0 15px;
+	/*hacemos que la transción sea suave*/
+	transition: all 0.15s;
+}
+/*animación sobre los enlaces*/
+#acordeon ul ul li a:hover {
+	background: #579fbd;
+	border-left: 5px solid lightgreen;
+    transition: all 0.55s;
+    color: #fff;
+}
+/*Lets hide the non active LIs by default*/
+#acordeon ul ul {
+	display: none;
+}
+#acordeon li.active ul {
+	display: block;
+}
+
