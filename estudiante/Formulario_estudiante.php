@@ -17,6 +17,9 @@
 
 <script src="../admin/js/jquery-1.11.2.js"></script>
 <script src="../admin//js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  alert("Bienvedido al sistema de estudiante");
+</script>
 </head>
 <body>
 
