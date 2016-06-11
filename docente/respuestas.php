@@ -1,3 +1,9 @@
+<?php 
+	//incluyendo archivos necesarios...
+	require('./conex/conexion.php');
+
+ ?>
+ 
 <div class="form-add-trec">
 	<div class="titulo-add-recurso">Agregrar Respuetas</div>
 	<form role="form" method="post" action="">
@@ -7,7 +13,7 @@
   </div>
             <div class="form-group">
  <br/>
-   <input type="submit" value="Enviar" />
+   <center><button type="submit" class="btn btn-success" name="btn-add-trec">Crear Respuesta</button> </center>
             </div>
    
     

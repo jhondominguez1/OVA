@@ -1,4 +1,11 @@
-<div class="form-add-trec">
+
+<?php 
+	//incluyendo archivos necesarios...
+	require('./conex/conexion.php');
+
+ ?>
+ 
+ <div class="form-add-trec">
 	<div class="titulo-add-recurso">Agregrar Pregunta</div>
 	<form role="form" method="post" action="">
   <div class="form-group">
@@ -7,12 +14,12 @@
   </div>
             <div class="form-group">
                 <br>
-                <button type="submit" class="btn btn-success" name="btn-add-pregunta"/>
+                <center><button type="submit" class="btn btn-success" name="btn-pregunta">Agregar Pregunta</button> </center>
              </div>
 
 <?php
 //agrendando un nueva lección----
-	if (isset($_POST['btn-add-pregunta'])) {
+	if (isset($_POST['btn-pregunta'])) {
 		$nombre_recurso = $_POST['nombre_pregunta'];
 		            
 	//valido que el nombre de la leccion no exista.. para ello debemos hacer la consulta a la base de datos-..
@@ -23,7 +30,7 @@
 		if ($numrwos>0) {
 			echo "<script>
 				alert('El nombre ya existe...');
-				window.location='./?op=1';
+				window.location='./?op=5';
 			</script>"	;
 		}else{
 			//si no existe hago el registro----
