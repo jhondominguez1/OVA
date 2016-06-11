@@ -1,6 +1,10 @@
-<?php
-	require("../conex/conexion");
-	?>
+
+<?php 
+	//incluyendo archivos necesarios...
+	require('./conex/conexion.php');
+
+ ?>
+ 
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
