@@ -12,6 +12,7 @@
 <body>
 <!-- aqui se edittara la informacion de perfil del estudiante -->
 <!-- ya esta mostrando la información del estudiante pero co id fija -->
+<!-- se necesita loginpara traer la id del estudiante -->
 <form method="POST" action="actualizar-perfil-estudiante.php">
 	
 	<table border=1 align="center">
