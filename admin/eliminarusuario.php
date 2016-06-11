@@ -6,6 +6,6 @@ if ($reg=mysqli_fetch_array($registro)){
 	
 	
 	mysqli_query($conexion, "DELETE FROM usuarios WHERE id_usuario='$id'") or die ("Problemas en la  consulta");
-	header("location:listarusuarios.php");
-}
+	echo"<script type=\"text/javascript\">alert('Usuario eliminado con exito'); window.location='listarusuarios.php';</script>";
+	}
 ?>
