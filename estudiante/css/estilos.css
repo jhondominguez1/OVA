@@ -71,3 +71,71 @@ footer {
  .t1{
  	background-color: #9A9A9A;
  }
+
+ .well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #9A9A9A;
+  border: 0px ;
+  
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #535556;
+  border-color: #535556;
+  width: 200px;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+  color: #fff;
+  background-color: #2F3132;
+  border-color: #2F3132;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #2F3132;
+  border-color: #2F3132;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #2F3132;
+  border-color: #2F3132;
+}
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary.focus {
+  color: #fff;
+  background-color: #2F3132;
+  border-color: #2F3132;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus {
+  background-color: #2F3132;
+  border-color: #2F3132;
+}
+.btn-primary .badge {
+  color: #2F3132;
+  background-color: #2F3132;
+}
