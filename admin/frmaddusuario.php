@@ -14,9 +14,10 @@ include ("../conex/conexion.php");
   <div class="form-group">
       <div><label for="tipo_identificacion">Tipo identificación</label></td><td>
     <select required class="form-control" id="tipo_identificacion" name="tipo_identificacion">
-        <option value="cedula">Cedula de ciudadanía</option>
-        <option value="tarjeta">Tarjeta de Identidad</option>
-        <option value="cedula ex">Cedula Extrangería</option>
+		
+        <option value="Cedula de ciudadanía">Cedula de ciudadanía</option>
+        <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+        <option value="Cedula Extrangería">Cedula Extrangería</option>
         <option value="pasaporte">Pasaporte</option>
     </select></div>
   </div></td>
