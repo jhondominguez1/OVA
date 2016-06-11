@@ -1,5 +1,5 @@
 <?php
-	include("../conex/conexion.php");
+	require("../conex/conexion");
 	?>
 <head>
 	<meta charset="UTF-8">
