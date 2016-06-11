@@ -1,6 +1,6 @@
 <meta charset=utf-8> 
 <?php
-include ("../conex/conexion.php");
+require("../conex/conexion.php");
 $id_usuario=$_GET['id'];
 $registro=mysqli_query($conexion,"SELECT usuarios.*, roles.rol FROM usuarios INNER JOIN roles ON usuarios.id_rol = roles.id_rol WHERE id_usuario='$_GET[id]'") or die ("Problema en la consulta usuarios");
 

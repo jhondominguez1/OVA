@@ -1,5 +1,5 @@
 <?php
-include ("../conex/conexion.php");
+require("../conex/conexion.php");
 if (isset($_POST['nnumero_identificacion']) && !empty($_POST['nnumero_identificacion']) 
 && isset($_POST['nnombre_usuario']) &&!empty($_POST['nnombre_usuario'])
 && isset($_POST['nid_rol']) &&!empty($_POST['nid_rol'])){

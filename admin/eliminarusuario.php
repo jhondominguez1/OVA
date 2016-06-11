@@ -1,5 +1,5 @@
 <?php
-include ("../conex/conexion.php");
+require("../conex/conexion.php");
 $id=$_GET['id'];
 $registro=mysqli_query($conexion,"SELECT * FROM usuarios  WHERE id_usuario='$id'") or die ("Problema en la consulta");
 if ($reg=mysqli_fetch_array($registro)){

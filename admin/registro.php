@@ -1,5 +1,5 @@
 <?php 
-require_once("conexion.php"); 
+require("../conex/conexion.php");
 
  
 if(isset($_POST["register"])){
