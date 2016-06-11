@@ -15,19 +15,23 @@ include ("../conex/conexion.php");
       <div><label for="tipo_identificacion">Tipo identificación</label></td><td>
     <select required class="form-control" id="tipo_identificacion" name="tipo_identificacion">
         <option value="cedula">Cedula de ciudadanía</option>
-        <option value="tarjeta">Targeta de Identidad</option>
+        <option value="tarjeta">Tarjeta de Identidad</option>
         <option value="cedula ex">Cedula Extrangería</option>
         <option value="pasaporte">Pasaporte</option>
     </select></div>
   </div></td>
   <tr><td><div class="form-group">
       <label for="numero_identificacion">Numero de identificación</label></td>
-      <td><input type="text" class="form-control" id="numero_identificacion" name="numero_identificacion">
+      <td><input type="number" class="form-control" id="numero_identificacion" name="numero_identificacion">
   </div> </td></tr>
  <tr><td> <div class="form-group">
       <label for="nombre_usuario">Nombre usuario</label></td>
       <td><input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario">
-  </div>  </td></tr>          
+  </div>  </td></tr>
+<tr><td> <div class="form-group">
+      <label for="password">Password</label></td>
+      <td><input type="password" class="form-control" id="password" name="password">
+  </div>  </td></tr>  
   <tr><td><div class="form-group">
     <label for="id_rol">Rol</label></td>
     <td><select required class="form-control" id="id_rol" name="id_rol">

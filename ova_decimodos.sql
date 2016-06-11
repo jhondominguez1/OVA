@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 07-06-2016 a las 17:25:19
+-- Tiempo de generación: 11-06-2016 a las 05:02:54
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -160,21 +160,6 @@ INSERT INTO `leccion` (`id_leccion`, `nombre_leccion`, `descripcion_leccion`, `i
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `logins`
---
-
-CREATE TABLE IF NOT EXISTS `logins` (
-  `id_login` int(11) NOT NULL AUTO_INCREMENT,
-  `login` varchar(45) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
-  `id_usuarios` int(11) NOT NULL,
-  PRIMARY KEY (`id_login`),
-  KEY `fk_login_usuarios1_idx` (`id_usuarios`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `preguntas`
 --
 
@@ -281,18 +266,20 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `tipo_identificacion` varchar(45) DEFAULT NULL,
   `numero_identificacion` int(11) DEFAULT NULL,
   `nombre_usuario` varchar(45) DEFAULT NULL,
+  `password` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `id_rol` int(11) NOT NULL,
   PRIMARY KEY (`id_usuario`),
   KEY `fk_usuarios_roles_idx` (`id_rol`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `tipo_identificacion`, `numero_identificacion`, `nombre_usuario`, `id_rol`) VALUES
-(1, 'Cedula', 1085285496, 'Michael Steven Delgado', 1),
-(2, 'cedula', 1085300310, 'Camilo Andres Parra', 1);
+INSERT INTO `usuarios` (`id_usuario`, `tipo_identificacion`, `numero_identificacion`, `nombre_usuario`, `password`, `id_rol`) VALUES
+(1, 'Cedula de ciudadania', 1085269729, 'luis', '123', 1),
+(2, 'Cedula de ciudadania', 1085000000, 'marcela', '123', 3),
+(3, 'Cedula de ciudadania', 1085000000, 'daniel', '123', 1);
 
 --
 -- Restricciones para tablas volcadas
@@ -342,12 +329,6 @@ ALTER TABLE `imagenes`
 --
 ALTER TABLE `leccion`
   ADD CONSTRAINT `fk_leccion_curso1` FOREIGN KEY (`id_curso`) REFERENCES `cursos` (`id_curso`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `logins`
---
-ALTER TABLE `logins`
-  ADD CONSTRAINT `fk_login_usuarios1` FOREIGN KEY (`id_usuarios`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `preguntas_respuestas`
