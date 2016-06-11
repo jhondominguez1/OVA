@@ -1,4 +1,5 @@
 <!-- Archivo para actualizar la informacion de estudiante en la BD -->
+<!-- ya esta funcionando -->
 <?php
 $id_usuario = $_POST['id_usuario'];
 $tipo_identificacion = $_POST['tipo_identificacion'];
