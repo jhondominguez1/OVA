@@ -19,7 +19,7 @@
 
 <?php
 //agrendando un nueva lección----
-	if (isset($_POST['btn-pregunta'])) {
+	if (isset($_POST['btn-add-pregunta'])) {
 		$nombre_recurso = $_POST['nombre_pregunta'];
 		            
 	//valido que el nombre de la leccion no exista.. para ello debemos hacer la consulta a la base de datos-..
@@ -30,7 +30,7 @@
 		if ($numrwos>0) {
 			echo "<script>
 				alert('El nombre ya existe...');
-				window.location='./?op=5';
+				window.location='./?op=1';
 			</script>"	;
 		}else{
 			//si no existe hago el registro----
