@@ -36,7 +36,11 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-dsadas
+
+
+<footer class="footer text-center">
+  <p class="pfooter">Universidad de Nariño <br>© All RIGHTS RESERVED<br>2016</p>
+</footer>
 
 </body>
 		<script type="text/javascript" src="js/jquery.js"></script>
