@@ -33,10 +33,26 @@
         <li><a href="">Cerrar Sesión</a></li>
       </ul>
 
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 
+<table width="100%" height="500" border="0" class="t1">
+  <tr>
+  
+    </td>
+
+    <td  width="80%">
+    
+    
+    </td>
+    
+    
+  </tr>
+
+
+
+</table>
 
 <footer class="footer text-center">
   <p class="pfooter">Universidad de Nariño <br>© All RIGHTS RESERVED<br>2016</p>
