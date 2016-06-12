@@ -1,50 +1,82 @@
+<!DOCTYPE html>
 <html>
-    <title> Formulario Agregar Usuario</title>
-    <head> 
-       <meta charset="UTF-8">
-<?php
-include ("../conex/conexion.php");
-?>
-    </head>
-    <body>
-        <table align="center"><tr><td colspan="2" align="center" >
-<div class="form-add-trec">
-    <div class="titulo-add-recurso">Agregar Usuario</div></td>
-	<tr><td><form role="form" method="post" action="addusuario.php">
-  <div class="form-group">
-      <div><label for="tipo_identificacion">Tipo identificación</label></td><td>
-    <select required class="form-control" id="tipo_identificacion" name="tipo_identificacion">
-		
-        <option value="Cedula de ciudadanía">Cedula de ciudadanía</option>
-        <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-        <option value="Cedula Extrangería">Cedula Extrangería</option>
-        <option value="pasaporte">Pasaporte</option>
-    </select></div>
-  </div></td>
-  <tr><td><div class="form-group">
-      <label for="numero_identificacion">Numero de identificación</label></td>
-      <td><input type="number" class="form-control" id="numero_identificacion" name="numero_identificacion">
-  </div> </td></tr>
- <tr><td> <div class="form-group">
-      <label for="nombre_usuario">Nombre usuario</label></td>
-      <td><input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario">
-  </div>  </td></tr>
-<tr><td> <div class="form-group">
-      <label for="password">Password</label></td>
-      <td><input type="password" class="form-control" id="password" name="password">
-  </div>  </td></tr>  
-  <tr><td><div class="form-group">
-    <label for="id_rol">Rol</label></td>
-    <td><select required class="form-control" id="id_rol" name="id_rol">
-        <option value="2">Docente</option>
-        <option value="3">Estudiante</option>
-        <option value="1">Administrador</option>
-        </select>
-  </div></td></tr>
-  <tr><td colspan="2"><button type="submit" class="btn btn-success" name="btn-add_user">Agregar</button></td></tr>
-</form>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registro</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<br><br><br>
+<div class="row">
+	<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+		<div class="login-panel panel panel-default">
+			<div class="panel-heading">
+			Registro
+			</div>
+				<div class="panel-body">
+				
+					<form role="form" method="post" action="addusuario.php">
+						<fieldset>
+							<div class="form-group">
+							<label for="tipo_identificacion">Tipo identificación</label>
+							<p>
+							<select required class="form-control" id="tipo_identificacion" name="tipo_identificacion" style="width: 290px;">
+								<option value="Cedula Ciudadania">Cedula de ciudadanía</option>
+								<option value="Tarjeta Identidad">Tarjeta de Identidad</option>
+								<option value="Codigo Estudiante">Codigo Estudiante</option>
+							</select>
+							</p>
+							<p>
+							<label for="user_pass">Número<br />
+							<input type="text" name="numero_identificacion" id="numero_identificacion" class="input" value="" size="32" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" /></label>
+							</p>
+ 
+							<p>
+							<label for="user_pass">Nombre De Usuario<br />
+							<input type="text" name="nombre_usuario" id="nombre_usuario" class="input" value="" size="32" /></label>
+							</p>
+ 
+							<p>
+							<label for="user_pass">Contraseña<br />
+							<input type="password" name="password" id="password" class="input" value="" size="32" /></label>
+							</p>
+							
+							
+							<label for="user_pass">Rol</label>
+							<p>
+							<select required name="id_rol" id="id_rol" class="form-control" style="width: 290px;"/>
+							<option value="1">Administrador</option>
+							<option value="2">Docente</option>
+							<option value="3">Estudiante</option>
+							</select>
+							</p>
+							
+							<input type="text" name="formulario" id="formulario" class="input" value="admin" size="32" hidden/></label>
+							<p class="submit">
+								<input type="submit" name="register" id="register" class="btn btn-primary" value="Registrar" />
+								</p>
+ 
+								
+							</div>
+						</fieldset>
+					</form>
+ 
+				</div>
+			
+		</div>
+	</div>
 </div>
-</table>
 </body>
 
 </html>
