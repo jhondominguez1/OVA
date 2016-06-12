@@ -14,7 +14,7 @@
 		</tr>
 		<?php
 		include ("../conex/conexion.php");
-			$area=mysqli_query($conexion,"SELECT id_area_conocimiento, nombre_area_conocimiento FROM areas_conocimiento") or die ("Problema en la consulta select");
+			$area=mysqli_query($conexion,"SELECT id_area_conocimiento, nombre_area_conocimiento FROM areas_conocimiento") or die ("Problema en la consulta select area");
 			$registros=mysqli_query($conexion, "SELECT cursos.*, areas_conocimiento.nombre_area_conocimiento FROM cursos
 			INNER JOIN areas_conocimiento ON cursos.id_area_conocimiento=areas_conocimiento.id_area_conocimiento;
 			")or die ("Problemas en la consulta");
