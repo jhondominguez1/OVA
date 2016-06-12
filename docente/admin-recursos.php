@@ -43,6 +43,8 @@
   <button type="submit" class="btn btn-success" name="btn-add-recurso">Enviar</button>
 </form>
 </div>
+
+
 <!--Listando las lecciones que ya estan agregadas-->
 <div class="lis-ti-rec">
 	<?php 
@@ -71,7 +73,7 @@
             <td><?php echo $fila['link_recurso']; ?></td>
             <td><?php echo $fila['id_leccion']; ?></td>
 			<td align="center"><b class="icon-pencil"></b></td>
-			<td><span class="icon-trash"></span></td>
+			<td><a href= "./docente/eliminar.php?nombre_recurso=<?php echo $fila['nombre_recurso'];?>"<span class="icon-trash"></span></a></td>
 	</tr>
 		<?php } ?>
 	</table>
@@ -107,7 +109,5 @@
 			</script>"	;	
 			}
 	}
-
-
 ?>
 
