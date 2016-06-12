@@ -72,7 +72,41 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Usuario</div>
                     <div class="panel-body">        
+
+
+                <form method="POST" action="actualizar-perfil-estudiante.php">                  
+                <div align="center" class="form-add-trec">
+                        <div class="form-group">
+                            <div colspan=5 align="center" class="titulo-add-recurso">Actualizar Perfil</div>
+                        </div>
+                <!-- consulta -->
+                <?php
+                include ("conexion.php");
+                $id_usuario=3;
+                $registroest=mysqli_query($conexion,"SELECT id_usuario, tipo_identificacion, numero_identificacion, nombre_usuario FROM usuarios
+                    WHERE id_usuario='$id_usuario'") or die("Problemas en la consulta");
+                while ($row=mysqli_fetch_array($registroest)){
+                ?>
+                <input type="hidden" name="id_usuario" value="<?php echo $row['id_usuario'];?>"/>
                         
+    <div class="panel panel-warning">
+    <div class="panel-heading">Documento de Identificación</div>
+      <div class="panel-body"><input type="text" name="tipo_identificacion" required class="form-control" value="<?php echo $row['tipo_identificacion'];?>"/></div>
+    </div>
+    <div class="panel panel-warning">
+      <div class="panel-heading">Número de Identificación</div>
+      <div class="panel-body"><input type="text" name="numero_identificacion" required class="form-control" value="<?php echo $row['numero_identificacion'];?>"/></div>
+    </div>
+    <div class="panel panel-warning">
+      <div class="panel-heading">Nombres y Apellidos</div>
+      <div class="panel-body"><input type="text" name="nombre_usuario" required class="form-control" value="<?php echo $row['nombre_usuario'];?>"/></div>
+    </div>
+    <div><input type="submit" value="Actualizar Datos" class="btn btn-warning"></div>
+
+                <?php }?>
+                </div>
+                </form>
+
                     </div>
                 </div>
             </div> 
