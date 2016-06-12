@@ -2,9 +2,10 @@
 
 body {
 	background: #f1f4f7;
-	padding-top: 50px;
+	padding-top: 23px;
 	color: #5f6468;
 }
+
 
 p {
 	color: #777;
@@ -291,8 +292,8 @@ a.bg-danger:hover {
 	font-size: 18px;
 	font-weight: 300;
 	letter-spacing: 0.025em;
-	height: 66px;
-	line-height: 45px;
+	height: 26px;
+	line-height: 0px;
 }
 
 .panel-default .panel-heading {
