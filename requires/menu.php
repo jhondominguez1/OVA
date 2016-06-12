@@ -8,8 +8,8 @@
         <li><a href="./?op=1">Lecciones</a></li>
          <li><a href="./?op=2">Recursos</a></li>
          <li><a href="./?op=3">Evaluaciones</a></li>
-         <li><a href="./?op=4">Preguntas</a></li>
-         <li><a href="./?op=5">Respuestas</a></li>
+         <li><a href="./?op=4">Respuestas</a></li>
+         <li><a href="./?op=5">Preguntas</a></li>
          <!--    
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
