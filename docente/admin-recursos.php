@@ -60,22 +60,25 @@
                         <td>Lección</td> 
                         <td colspan="2" width="32%";>Acciones</td>
 		</tr>
-		<!--Código php para  listar las leccions-->
-		<?php while($fila=mysqli_fetch_array($query)) { ?>
-		<tr>
+			
+
+			<?php while($fila=mysqli_fetch_array($query)) { ?>
+
+			<!---agrendando un nuevo recurso-->
+	<tr>
 			<td><?php echo $fila['nombre_recurso']; ?></td>
-                        <td><?php echo $fila['nombre_tipo_recurso']; ?></td>
-                        <td><?php echo $fila['link_recurso']; ?></td>
-                        <td><?php echo $fila['nombre_leccion']; ?></td>
+            <td><?php echo $fila['id_tipo_recurso']; ?></td>
+            <td><?php echo $fila['link_recurso']; ?></td>
+            <td><?php echo $fila['id_leccion']; ?></td>
 			<td align="center"><b class="icon-pencil"></b></td>
 			<td><span class="icon-trash"></span></td>
-		</tr>
+	</tr>
 		<?php } ?>
 	</table>
 </div>
 
 <?php
-//agrendando un nueva lección----
+//agrendando un nuevo recurso----
 	if (isset($_POST['btn-add-recurso'])) {
 		$nombre_recurso = $_POST['nombre_recurso'];
 		$id_tipo_recurso = $_POST['id_tipo_recurso'];
@@ -89,7 +92,7 @@
 		if ($numrwos>0) {
 			echo "<script>
 				alert('El nombre ya existe...');
-				window.location='./?op=1';
+				window.location='./?op=2';
 			</script>"	;
 		}else{
 			//si no existe hago el registro----
@@ -100,9 +103,11 @@
                         //echo $sql;
 			echo "<script>
 				alert('Datos Agregados con exito..');
-				window.location='./?op=1';
+				window.location='./?op=2';
 			</script>"	;	
 			}
 	}
+
+
 ?>
 
