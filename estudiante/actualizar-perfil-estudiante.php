@@ -20,5 +20,5 @@ echo "<META HTTP-EQUIV=Refresh CONTENT='1; URL=frm-editar-perfil-estudiante.php'
 else{
 	echo "El Usuario no existe";
 }
-echo "<META HTTP-EQUIV=Refresh CONTENT='1; URL=frm-editar-perfil-estudiante.php'>";
+echo "<META HTTP-EQUIV=Refresh CONTENT='1; URL=Formulario_Estudiante.php'>";
 ?>

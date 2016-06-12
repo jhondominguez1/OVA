@@ -30,7 +30,7 @@
  
       <ul class="nav navbar-nav navbar-right">
         <ul class="nav navbar-nav">
-        <li><a href="">Ir al Curso</a></li>
+        <li><a href="curso-estudiante.php">Ir al Curso</a></li>
         <li><a href="">Cerrar Sesión</a></li>
       </ul>
 
@@ -39,14 +39,12 @@
 </nav>
 
 
-
       <?php 
     
     $cscursos="SELECT cursos.nombre_curso, cursos.descripcion_curso 
     FROM cursos 
     inner join asignacion_estudiantes on cursos.id_curso=asignacion_estudiantes.id_curso 
     inner join usuarios on asignacion_estudiantes.id_usuario=usuarios.id_usuario 
-    inner join logins on logins.id_usuarios=usuarios.id_usuario 
     inner join roles on roles.id_rol=usuarios.id_rol ";
     $cursos=mysqli_query($conexion,$cscursos) or die("problemas en la 1 consulta".$cscursos);
        ?>
@@ -54,7 +52,7 @@
     
     
      <div class="container">
-     <div class="well well-sm"><h4 align="center">Perfil Estudiante</h4></div>
+     <div class="well well-sm"><h4 align="center"></h4></div>
         <div class="row">
             <div class="col-md-4">
                 <div class="row>"
@@ -93,7 +91,7 @@
                 <!-- consulta -->
                 <?php
                 include ("conexion.php");
-                $id_usuario=3;
+                $id_usuario=2;
                 $registroest=mysqli_query($conexion,"SELECT id_usuario, tipo_identificacion, numero_identificacion, nombre_usuario FROM usuarios
                     WHERE id_usuario='$id_usuario'") or die("Problemas en la consulta");
                 while ($row=mysqli_fetch_array($registroest)){
