@@ -1,16 +1,19 @@
 <html>
-    <title> Listar Usuarios</title>
+    
     <head> 
-       <meta charset="UTF-8">
-
-</head>
+		<meta charset="UTF-8">
+		
+		<title> Listar Usuarios</title>
+		
+	</head>
+	
 	<body>
 		<table align="center">
 		<tr>
         <td colspan="5" align="center" >Usuarios</td>
 		</tr>
 		<tr>
-		<td>Tipo Identificacion </td><td>Numero de Identificacion </td><td> Nombre de usuario</td><td> Password </td><td>Rol </td><td>Eliminar </td><td>Actualizar </td>
+		<td>Tipo Identificacion </td><td>Numero de Identificacion </td><td> Nombre de usuario</td><td> Password </td><td>Rol </td><td colspan=2> Acciones </td>
 		</tr>
 		<?php
 		include ("../conex/conexion.php");
