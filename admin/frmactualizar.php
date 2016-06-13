@@ -62,33 +62,40 @@ echo "<div class='row'>
 									<th data-field='nombre_usuario'  data-sortable='true'>Nombre de usuario</th>
 									<th data-field='password' data-sortable='true'>Password</th>
 									<th data-field='rol' data-sortable='true'>Rol</th>
-									</tr>";
-	while ($reg=mysqli_fetch_array($registro)){
-		echo "<tr><td>".$reg['id_usuario']."</td><td>".$reg['tipo_identificacion']."</td><td>".$reg['numero_identificacion']."</td><td>".$reg['nombre_usuario']."</td><td>".$reg['password']."</td><td>".$reg['rol']."</td></tr>";
-	}
-	
-echo "<form action='actualizar.php' method='POST'> 
-<tr><td><input type='text' name='nid_usuario' value='$id_usuario' hidden ></td>
-<td><select  name='ntipo_identificacion'>
-        <option value='Cedula de ciudadanía'>Cedula de ciudadanía</option>
-        <option value='Tarjeta de Identidad'>Tarjeta de Identidad</option>
-        <option value='Cedula Extrangería'>Cedula Extrangería</option>
-        <option value='pasaporte'>Pasaporte</option>
-        </select></td>
-<td><input type='text' name='nnumero_identificacion' size=9></td>
-<td><input type='text' name='nnombre_usuario' ></td>
-<td><input type='password' name='npassword' ></td>
-<td><select  name='nid_rol'>
-        <option value='2'>Docente</option>
-        <option value='3'>Estudiante</option>
-        <option value='1'>Administrador</option>
-        </select></td><tr>
-	<tr>
-	<td colspan='6'>
-	<p class='submit'>
-	<input type='submit' name='actualizar' class='btn btn-primary' value='Actualizar' />
-	</p>
-	</td></tr></form>";
+								</tr>";
+								while ($reg=mysqli_fetch_array($registro)){
+								echo "<tr><td>".$reg['id_usuario']."</td><td>".$reg['tipo_identificacion']."</td><td>".$reg['numero_identificacion']."</td><td>".$reg['nombre_usuario']."</td><td>".$reg['password']."</td><td>".$reg['rol']."</td></tr>";
+								}
+								echo "<form action='actualizar.php' method='POST'> 
+								<tr><td><input type='text' name='nid_usuario' value='$id_usuario' hidden ></td>
+								<td><select  name='ntipo_identificacion'>
+									<option value='Cedula de ciudadanía'>Cedula de ciudadanía</option>
+									<option value='Tarjeta de Identidad'>Tarjeta de Identidad</option>
+									<option value='Cedula Extrangería'>Cedula Extrangería</option>
+									<option value='pasaporte'>Pasaporte</option>
+								</select></td>
+								<td><input type='text' name='nnumero_identificacion' size=9></td>
+								<td><input type='text' name='nnombre_usuario' ></td>
+								<td><input type='password' name='npassword' ></td>
+								<td><select  name='nid_rol'>
+									<option value='2'>Docente</option>
+									<option value='3'>Estudiante</option>
+									<option value='1'>Administrador</option>
+								</select></td></tr>
+								<tr>
+								<td colspan='6'>
+								<p class='submit'>
+								<input type='submit' name='actualizar' class='btn btn-primary' value='Actualizar' />
+								</p>
+								</td></tr></form>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>";
 ?> 									
 									
 									
