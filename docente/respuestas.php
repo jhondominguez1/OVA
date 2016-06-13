@@ -49,7 +49,7 @@
 		$sql = "SELECT * FROM respuestas  WHERE respuesta = '$nombre_resp'";
 		$query = mysqli_query($conexion,$sql);
 		$numrwos=mysqli_num_rows($query);
-		echo $sql;
+		//echo $sql;
 		if ($numrwos>0) {
 			echo "<script>
 				alert('El nombre ya existe...');
