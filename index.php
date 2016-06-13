@@ -35,9 +35,10 @@
                                                         if ($op==3) require('./docente/crear-evaluacion.php');
                                                         if ($op==4) require('./docente/respuestas.php');
 														if ($op==5) require('./docente/preguntas.php');
+														if ($op==6) require('./docente/evaluacion.php');
 														
 																			}else{
-						require('./docente/admin-recursos.php');
+						require('./docente/evaluacion.php');
 					}
 					
 
