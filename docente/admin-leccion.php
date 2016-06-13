@@ -46,13 +46,13 @@
 		</tr>
 		<!--Código php para  listar las leccions-->
 		<?php 
-                $sql2 = "SELECT * FROM leccion";
+                $sql2 = "SELECT * FROM leccion JOIN cursos";
 		$query2 = mysqli_query($conexion,$sql2);
                 while($fila=mysqli_fetch_array($query2)) { ?>
 		<tr>
 			<td><?php echo $fila[1]; ?></td>
                         <td><?php echo $fila[2]; ?></td>
-                        <td><?php echo $fila[3]; ?></td>
+                        <td><?php echo $fila[5]; ?></td>
 			<td align="center"><b class="icon-pencil"></b></td>
 			<td><a href= "./docente/eliminar1.php?nombre_leccion=<?php echo $fila['nombre_leccion'];?>"<span class="icon-trash"></span></td>
 		</tr>
