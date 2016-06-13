@@ -53,26 +53,42 @@
             </div>
  <!--Listando las resuestas que ya estan agregadas-->
 <div class="lis-ti-rec">
-	<?php 
+<?php 
 		//realizando la consulta--
-		$sql = "SELECT * FROM respuestas";
+		$sql = "SELECT * FROM preguntas_respuestas join preguntas";
 		$query = mysqli_query($conexion,$sql);
 	 ?>
 	<table class"table">
-		<th colspan="3"> Respuestas </th>
-		<tr>
-			<td>Respuesta</td>
-            <td colspan="2" width="30%";>Acciones</td>
+               <tr>
+                <th> Pregunta </th>
+		<th> Respuesta 1 </th>
+                <th> Respuesta 2 </th>
+                <th> Respuesta 3 </th>
+                <th> Respuesta 4 </th>
+            </tr>
+            <tr>
+                        <td>Pregunta</td>
+			<td>Respuesta 1</td>
+                        <td>Respuesta 2</td>
+                        <td>Respuesta 3</td>
+                        <td>Respuesta 4</td>
+                        <td colspan="2" width="30%";>Acciones</td>
 		</tr>
 		
 		<!--Listando los tipos de recursos-->
 		<?php while($fila=mysqli_fetch_array($query)) { ?>
 		<tr>
-			<td><?php echo $fila['respuesta']; ?></td>
-            <td align="center"><b class="icon-pencil"></b></td>
+			<td><?php echo $fila[6]; ?></td>
+                        <td><?php echo $fila['resp1']; ?></td>
+                        <td><?php echo $fila['resp2']; ?></td>
+                        <td><?php echo $fila['resp3']; ?></td>
+                        <td><?php echo $fila['resp4']; ?></td>
+                        <td align="center"><b class="icon-pencil"></b></td>
 			<td><a href= "./docente/eliminar3.php?respuesta=<?php echo $fila['respuesta'];?>"<span class="icon-trash"></span></td>
 		</tr>
 		<?php } ?>
+	</table>
+</div>
 	</table>
 </div>
 
