@@ -90,7 +90,7 @@
       </div>
     </td>
 
-    <td  width="80%">
+    <td  width="80%" align="center">
      <div id="capa"><img src="imgs/bienvenidos.jpg" align="rigth"></div>
     <br>
     
