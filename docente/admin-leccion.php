@@ -8,7 +8,7 @@
   <!--###Aqui se listan los cursos creados-->          
   <div class="form-group">
     <label for="nom-recurso">Asignar a curso</label>
-   	<select class="form-control"  name="id_evaluacion" id="id_evaluacion">
+   	<select class="form-control"  name="id_curso" id="id_curso">
 			
 						<?php
 						$consulta_cursos="SELECT * FROM cursos";
