@@ -64,7 +64,7 @@
       <ul class="nav navbar-nav navbar-right">
         <ul class="nav navbar-nav">
         <li><a href="Formulario_estudiante.php">Editar Perfil</a></li>
-        <li><a href="">Cerrar Sesión</a></li>
+        <li><a href="cerrar_sesion.php">Cerrar Sesión</a></li>
       </ul>
 
     </div>
