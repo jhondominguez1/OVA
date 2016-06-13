@@ -8,16 +8,18 @@
   <!--###Aqui se listan los cursos creados-->          
   <div class="form-group">
     <label for="nom-recurso">Asignar a curso</label>
-    <?php 
-	//realizando la consulta--
-		$sql_c = "SELECT * FROM cursos";
-		$query_c = mysqli_query($conexion,$sql_c);
-     ?>
-    <select class="form-control" name="id_curso">
-       <?php while($fila_c=mysqli_fetch_array($query_c)) {  ?>
-        <option value="<?php echo $fila_c['id_curso'] ?>"><?php echo $fila_c['nombre_curso'] ?></option>
-       <?php } ?>
-    </select>
+   	<select class="form-control"  name="id_evaluacion" id="id_evaluacion">
+			
+						<?php
+						$consulta_cursos="SELECT * FROM cursos";
+						$query_cursos=mysqli_query($conexion,$consulta_cursos) or die ("PROBLEMAS DE CONSULTA");
+						while ($fila=mysqli_fetch_array($query_cursos)) {
+						?>
+						<option value="<?php echo $fila[0] ?>"><?php echo "$fila[1]" ?></option> 
+						<?php			
+						}	
+						?>
+        </select>
   </div> 
   <!--##############################################################################-->
   <div class="form-group"> 
