@@ -6,10 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title> Asignacion Docente</title>
+<title> Asignaci&oacute;n Docente</title>
 
     <!-- Bootstrap -->
-    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/thememenu.css" rel="stylesheet">
 
@@ -18,7 +17,7 @@
 	<body>
 		<table align="center">
 		<tr>
-        <td colspan="5" align="center" >Asignacion Docente</td>
+        <td colspan="5" align="center" >Asignaci&oacute;n Docente</td>
 		</tr>
 		<tr>
 		<td>Curso</td><td>Docente</td><td colspan=2>Acciones </td>
@@ -36,7 +35,7 @@
 				<a href=./eliminarasignardocente.php?id=".$reg['id_curso']."><span class='glyphicon glyphicon-trash'></span></a>
 				</td></tr>";
 			}
-	    ?>
+	        ?>
 		<form  action="addasignardocente.php" method="POST">
 		<tr>
 		<td><select name='curso'>
