@@ -49,7 +49,7 @@
                         <td><?php echo $fila['descripcion_leccion']; ?></td>
                         <td><?php echo $fila['nombre_curso']; ?></td>
 			<td align="center"><b class="icon-pencil"></b></td>
-			<td><span class="icon-trash"></span></td>
+			<td><a href= "./docente/eliminar1.php?nombre_leccion=<?php echo $fila['nombre_leccion'];?>"<span class="icon-trash"></span></td>
 		</tr>
 		<?php } ?>
 	</table>
