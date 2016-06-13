@@ -14,5 +14,4 @@ else{
 	echo"<script type=\"text/javascript\">alert('Debe digitar los datos para poder actualizar el registro'); window.location='listarusuario.php';</script>";
 }
 
-
 ?>
