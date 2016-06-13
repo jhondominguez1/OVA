@@ -8,10 +8,45 @@
 	<div class="titulo-add-recurso">Agregrar Respuetas</div>
 	<form role="form" method="post" action="">
   <div class="form-group">
-    <label for="nom-respuesta">Nombre de la respuesta</label>
-    <input type="text" required class="form-control" id="" name="nombre_respuesta">
+    <label for="nom-respuesta">Respuesta 1</label>
+    <input type="text" required class="form-control" id="" name="respuesta_1">
   </div>
-            <div class="form-group">
+            
+  <div class="form-group">
+    <label for="nom-respuesta">Respuesta 2</label>
+    <input type="text" required class="form-control" id="" name="respuesta_2">
+  </div>
+  
+    <div class="form-group">
+    <label for="nom-respuesta">Respuesta 3</label>
+    <input type="text" required class="form-control" id="" name="respuesta_3">
+  </div>
+           
+            
+    <div class="form-group">
+    <label for="nom-respuesta">Respuesta 4</label>
+    <input type="text" required class="form-control" id="" name="respuesta_4">
+  </div>
+  
+  <div class="form-group">
+	<label for="id_pregunta">Seleccione una Pregunta</label>
+	<select class="form-control"  name="id_pregunta" id="id_pregunta">
+		
+					<?php
+					$consulta_pregunta="SELECT * FROM preguntas";
+					$consulta_pregunta2=mysqli_query($conexion,$consulta_pregunta) or die ("PROBLEMAS DE CONSULTA");
+					while ($fila=mysqli_fetch_array($consulta_pregunta2)) {
+					?>
+					<option value="<?php echo $fila[0] ?>"><?php echo "$fila[1]" ?></option> 
+					<?php			
+					}	
+					?>
+
+	</select>
+ </div> 
+  
+  
+<div class="form-group">
  <br/>
    <center><button type="submit" class="btn btn-success" name="btn-add-resp">Crear Respuesta</button> </center>
             </div>
