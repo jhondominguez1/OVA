@@ -93,30 +93,26 @@
 </div>
 
 
- <?php
+  <?php
 //agrendando respuestas----
 	if (isset($_POST['btn-add-resp'])) {
-		$nombre_resp = $_POST['nombre_respuesta'];
-		$sql = "SELECT * FROM respuestas  WHERE respuesta = '$nombre_resp'";
-		$query = mysqli_query($conexion,$sql);
-		$numrwos=mysqli_num_rows($query);
-		//echo $sql;
-		if ($numrwos>0) {
-			echo "<script>
-				alert('El nombre ya existe...');
-				window.location='./?op=4';
-			</script>"	;
-		}else{
 		
-			$sql ="INSERT INTO respuestas VALUES(NULL,'$nombre_resp')";
-			$query=mysqli_query($conexion,$sql);
-                        //echo $sql;
+                $resp1 = $_POST['respuesta_1'];
+                $resp2 = $_POST['respuesta_2'];
+                $resp3 = $_POST['respuesta_3'];
+                $resp4 = $_POST['respuesta_4'];
+                $id_pregunta = $_POST['id_pregunta'];
+		
+		
+			$sql4 ="INSERT INTO preguntas_respuestas VALUES('$id_pregunta','$resp1','$resp2','$resp3','$resp4')";
+			$query=mysqli_query($conexion,$sql4);
+                        echo $sql;
 			echo "<script>
 				alert('Respuesta agregada con exito..');
 				window.location='./?op=4';
 			</script>"	;	
 			}
-	}
+	
 ?>
    
     
