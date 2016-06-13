@@ -62,7 +62,9 @@
       <ul class="nav navbar-nav navbar-right">
         <ul class="nav navbar-nav">
         <li><a href="Formulario_estudiante.php">Editar Perfil</a></li>
-        <li><a href="cerrar_sesion.php">Cerrar Sesión</a></li>
+        <li><a href="cerrar_sesion.php" >Cerrar Sesión</a></li>
+
+
       </ul>
 
     </div>
@@ -70,7 +72,7 @@
 </nav>
 
 
-<table width="100%" height="500" border="0" class="t1">
+<table width="100%" height="400" border="0" class="t1">
   <tr>
     <td width="20%">
     <div class="col-sm-2 sidenav">
@@ -96,7 +98,6 @@
     
     
   </tr>
-
 
 
 </table>
