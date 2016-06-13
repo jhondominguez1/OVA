@@ -29,17 +29,44 @@
   <button type="submit" class="btn btn-success" name="btn-add-eva">Crear</button>
 </form>
 </div>
+
+
+ <!--Listando las resuestas que ya estan agregadas-->
+<div class="lis-ti-rec">
+	<?php 
+		//realizando la consulta--
+		$sql = "SELECT * FROM evaluacion";
+		$query = mysqli_query($conexion,$sql);
+	 ?>
+	<table class"table">
+		<th colspan="3"> Evaluaciones </th>
+		<tr>
+			<td>Evaluación</td>
+            <td colspan="2" width="30%";>Acciones</td>
+		</tr>
+		
+		<!--Listando los tipos de evaluaciones-->
+		<?php while($fila=mysqli_fetch_array($query)) { ?>
+		<tr>
+			<td><?php echo $fila['nombre_evaluacion']; ?></td>
+            <td align="center"><b class="icon-pencil"></b></td>
+			<td><a href= "./docente/eliminar5.php?nombre_evaluacion=<?php echo $fila['nombre_evaluacion'];?>"<span class="icon-trash"></span></td>
+		</tr>
+		<?php } ?>
+	</table>
+</div>
+
 <?php
-//agrendando un nueva lección----
+//agrendando un nueva evaluación----
 	if (isset($_POST['btn-add-eva'])) {
 		$nombre_evaluacion = $_POST['nombre_evaluacion'];
 		$id_leccion = $_POST['id_leccion'];
                     
-	//valido que el nombre de la leccion no exista.. para ello debemos hacer la consulta a la base de datos-..
+	//valido que el nombre de la levaluacion no exista.. para ello debemos hacer la consulta a la base de datos-..
 		$sql = "SELECT * FROM evaluacion  WHERE nombre_evaluacion = '$nombre_evaluacion'";
 		$query = mysqli_query($conexion,$sql);
 		$numrwos=mysqli_num_rows($query);
-		echo $sql;
+		//echo $sql;
 		if ($numrwos>0) {
 			echo "<script>
 				alert('El nombre ya existe...');
