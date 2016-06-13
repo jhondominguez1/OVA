@@ -86,16 +86,6 @@
                         esten los cursos*/
 			$sql1 ="INSERT INTO evaluaciones_preguntas VALUES($_POST[id_evaluacion],$_POST[id_pregunta])";
 			$query=mysqli_query($conexion,$sql1);
-			echo "$sql1";
-			foreach ($_POST as $key => $value) {
-				//echo $key."<br>";
-				//echo $value."<br>";
-
-			$sql ="INSERT INTO preguntas_respuestas VALUES($_POST[id_pregunta],$value,$_POST[value_pregunta])";
-			$query=mysqli_query($conexion,$sql);
-			echo "$sql <br>";
-			}
-
                         //echo $sql;
 			echo "<script>
 				alert('Datos Agregados con exito..');
