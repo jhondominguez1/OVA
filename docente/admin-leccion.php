@@ -37,7 +37,7 @@
 		$query = mysqli_query($conexion,$sql);
 	 ?>
 	<table class"table">
-		<th colspan="3"> Tipos de Recursos</th>
+		<th colspan="3"> Lecciones</th>
 		<tr>
 			<td>Nombre</td>
                         <td>Descripción</td>
@@ -45,11 +45,14 @@
 			<td colspan="2" width="32%";>Acciones</td>
 		</tr>
 		<!--Código php para  listar las leccions-->
-		<?php while($fila=mysqli_fetch_array($query)) { ?>
+		<?php 
+                $sql2 = "SELECT * FROM leccion";
+		$query2 = mysqli_query($conexion,$sql2);
+                while($fila=mysqli_fetch_array($query2)) { ?>
 		<tr>
-			<td><?php echo $fila['nombre_leccion']; ?></td>
-                        <td><?php echo $fila['descripcion_leccion']; ?></td>
-                        <td><?php echo $fila['nombre_curso']; ?></td>
+			<td><?php echo $fila[1]; ?></td>
+                        <td><?php echo $fila[2]; ?></td>
+                        <td><?php echo $fila[3]; ?></td>
 			<td align="center"><b class="icon-pencil"></b></td>
 			<td><a href= "./docente/eliminar1.php?nombre_leccion=<?php echo $fila['nombre_leccion'];?>"<span class="icon-trash"></span></td>
 		</tr>
