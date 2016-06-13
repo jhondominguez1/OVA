@@ -20,14 +20,14 @@
 //agrendando respuestas----
 	if (isset($_POST['btn-add-resp'])) {
 		$nombre_resp = $_POST['nombre_respuesta'];
-		$sql = "SELECT * FROM preguntas  WHERE nombre_pregunta = $nombre_resp";
+		$sql = "SELECT * FROM respuestas  WHERE respuesta = '$nombre_resp'";
 		$query = mysqli_query($conexion,$sql);
 		$numrwos=mysqli_num_rows($query);
 		echo $sql;
 		if ($numrwos>0) {
 			echo "<script>
 				alert('El nombre ya existe...');
-				window.location='./?op=1';
+				window.location='./?op=4';
 			</script>"	;
 		}else{
 		
@@ -36,7 +36,7 @@
                         //echo $sql;
 			echo "<script>
 				alert('Respuesta agregada con exito..');
-				window.location='./?op=1';
+				window.location='./?op=4';
 			</script>"	;	
 			}
 	}
