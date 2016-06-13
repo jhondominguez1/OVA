@@ -32,7 +32,7 @@
 			<td><?php echo $fila['nombre_tipo_recurso']; ?></td>
                         <td><?php echo $fila['descripcion_tipo_recurso']; ?></td>
 			<td align="center"><b class="icon-pencil"></b></td>
-			<td><span class="icon-trash"></span></td>
+			<td><a href= "./docente/eliminar2.php?nombre_tipo_recurso=<?php echo $fila['nombre_tipo_recurso'];?>"<span class="icon-trash"></span></td>
 		</tr>
 		<?php } ?>
 	</table>
