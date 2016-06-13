@@ -15,7 +15,33 @@
  <br/>
    <center><button type="submit" class="btn btn-success" name="btn-add-resp">Crear Respuesta</button> </center>
             </div>
-            
+            </div>
+ <!--Listando las resuestas que ya estan agregadas-->
+<div class="lis-ti-rec">
+	<?php 
+		//realizando la consulta--
+		$sql = "SELECT * FROM respuestas";
+		$query = mysqli_query($conexion,$sql);
+	 ?>
+	<table class"table">
+		<th colspan="3"> Respuestas </th>
+		<tr>
+			<td>Respuesta</td>
+            <td colspan="2" width="30%";>Acciones</td>
+		</tr>
+		
+		<!--Listando los tipos de recursos-->
+		<?php while($fila=mysqli_fetch_array($query)) { ?>
+		<tr>
+			<td><?php echo $fila['respuesta']; ?></td>
+            <td align="center"><b class="icon-pencil"></b></td>
+			<td><a href= "./docente/eliminar3.php?respuesta=<?php echo $fila['respuesta'];?>"<span class="icon-trash"></span></td>
+		</tr>
+		<?php } ?>
+	</table>
+</div>
+
+
  <?php
 //agrendando respuestas----
 	if (isset($_POST['btn-add-resp'])) {
