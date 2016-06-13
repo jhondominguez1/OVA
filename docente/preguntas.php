@@ -17,6 +17,33 @@
                 <center><button type="submit" class="btn btn-success" name="btn-pregunta">Agregar Pregunta</button> </center>
              </div>
     </form>         
+</div>
+
+ <!--Listando las preguntas que ya estan agregadas-->
+<div class="lis-ti-rec">
+	<?php 
+		//realizando la consulta--
+		$sql = "SELECT * FROM preguntas";
+		$query = mysqli_query($conexion,$sql);
+	 ?>
+	<table class"table">
+		<th colspan="3"> Preguntas </th>
+		<tr>
+			<td>Pregunta</td>
+            <td colspan="2" width="30%";>Acciones</td>
+		</tr>
+		
+
+		<!--Listando los tipos de recursos-->
+		<?php while($fila=mysqli_fetch_array($query)) { ?>
+		<tr>
+			<td><?php echo $fila['pregunta']; ?></td>
+            <td align="center"><b class="icon-pencil"></b></td>
+			<td><a href= "./docente/eliminar4.php?pregunta=<?php echo $fila['pregunta'];?>"<span class="icon-trash"></span></td>
+		</tr>
+		<?php } ?>
+	</table>
+</div>
 
 <?php
 //agrendando un nueva lección----
@@ -27,7 +54,7 @@
 		$sql = "SELECT * FROM preguntas  WHERE pregunta = '$nombre_pregunta'";
 		$query = mysqli_query($conexion,$sql);
 		$numrwos=mysqli_num_rows($query);
-		echo $sql;
+		//echo $sql;
 		if ($numrwos>0) {
 			echo "<script>
 				alert('El nombre ya existe...');
