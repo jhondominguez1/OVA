@@ -60,7 +60,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 								include ("../conex/conexion.php");
 								$registros=mysqli_query($conexion, "SELECT usuarios.*, roles.rol FROM usuarios INNER JOIN roles ON usuarios.id_rol = roles.id_rol where usuarios.id_rol = 1")or die ("Problemas en la consulta");
 								while ($reg=mysqli_fetch_array($registros)){
-								echo "<tr><td>".$reg['tipo_identificacion']."</td><td>".$reg['numero_identificacion']."</td><td>".$reg['nombre_usuario']."</td><td>'".md5($reg['password'])."</td><td>".$reg['rol']."</td><td><a href=./eliminarusuario.php?id=".$reg['id_usuario'].">Eliminar</a></td><td><a href=./frmactualizar.php?id=".$reg['id_usuario'].">Actualizar</a></td></tr>";
+								echo "<tr><td>".$reg['tipo_identificacion']."</td><td>".$reg['numero_identificacion']."</td><td>".$reg['nombre_usuario']."</td><td>'".md5($reg['password'])."</td><td>".$reg['rol']."</td><td><a href=./eliminarusuario.php?id=".$reg['id_usuario']."><span class='glyphicon glyphicon-trash'></span></a></td><td><a href=./frmactualizar.php?id=".$reg['id_usuario']."><span class='glyphicon glyphicon-edit'></span></a></td></tr>";
 								}
 								?>
 						    </table>
@@ -96,7 +96,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 								include ("../conex/conexion.php");
 								$registros=mysqli_query($conexion, "SELECT usuarios.*, roles.rol FROM usuarios INNER JOIN roles ON usuarios.id_rol = roles.id_rol where usuarios.id_rol = 2")or die ("Problemas en la consulta");
 								while ($reg=mysqli_fetch_array($registros)){
-								echo "<tr><td>".$reg['tipo_identificacion']."</td><td>".$reg['numero_identificacion']."</td><td>".$reg['nombre_usuario']."</td><td>'".md5($reg['password'])."</td><td>".$reg['rol']."</td><td><a href=./eliminarusuario.php?id=".$reg['id_usuario'].">Eliminar</a></td><td><a href=./frmactualizar.php?id=".$reg['id_usuario'].">Actualizar</a></td></tr>";
+								echo "<tr><td>".$reg['tipo_identificacion']."</td><td>".$reg['numero_identificacion']."</td><td>".$reg['nombre_usuario']."</td><td>'".md5($reg['password'])."</td><td>".$reg['rol']."</td><td><a href=./eliminarusuario.php?id=".$reg['id_usuario']."><span class='glyphicon glyphicon-trash'></span></a></td><td><a href=./frmactualizar.php?id=".$reg['id_usuario']."><span class='glyphicon glyphicon-edit'></span></a></td></tr>";
 								}
 								?>
 						    </table>
@@ -132,7 +132,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 								include ("../conex/conexion.php");
 								$registros=mysqli_query($conexion, "SELECT usuarios.*, roles.rol FROM usuarios INNER JOIN roles ON usuarios.id_rol = roles.id_rol where usuarios.id_rol = 3")or die ("Problemas en la consulta");
 								while ($reg=mysqli_fetch_array($registros)){
-								echo "<tr><td>".$reg['tipo_identificacion']."</td><td>".$reg['numero_identificacion']."</td><td>".$reg['nombre_usuario']."</td><td>'".md5($reg['password'])."</td><td>".$reg['rol']."</td><td><a href=./eliminarusuario.php?id=".$reg['id_usuario'].">Eliminar</a></td><td><a href=./frmactualizar.php?id=".$reg['id_usuario'].">Actualizar</a></td></tr>";
+								echo "<tr><td>".$reg['tipo_identificacion']."</td><td>".$reg['numero_identificacion']."</td><td>".$reg['nombre_usuario']."</td><td>'".md5($reg['password'])."</td><td>".$reg['rol']."</td><td><a href=./eliminarusuario.php?id=".$reg['id_usuario']."><span class='glyphicon glyphicon-trash'></span></a></td><td><a href=./frmactualizar.php?id=".$reg['id_usuario']."><span class='glyphicon glyphicon-edit'></span></a></td></tr>";
 								}
 								?>
 						    </table>
