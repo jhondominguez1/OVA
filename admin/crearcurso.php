@@ -59,7 +59,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 								$registros=mysqli_query($conexion, "SELECT cursos.*, areas_conocimiento.nombre_area_conocimiento FROM cursos
 								INNER JOIN areas_conocimiento ON cursos.id_area_conocimiento=areas_conocimiento.id_area_conocimiento;")or die ("Problemas en la consulta");
 								while ($reg=mysqli_fetch_array($registros)){
-								echo "<tr><td>".$reg['nombre_curso']."</td><td>".$reg['descripcion_curso']."</td><td>".$reg['nombre_area_conocimiento']."</td><td><a href=./eliminarcurso.php?id=".$reg['id_curso'].">Eliminar</a></td><td><a href=./frmactualizarcurso.php?id=".$reg['id_curso'].">Actualizar</a></td></tr>";
+								echo "<tr><td>".$reg['nombre_curso']."</td><td>".$reg['descripcion_curso']."</td><td>".$reg['nombre_area_conocimiento']."</td><td><a href=./eliminarcurso.php?id=".$reg['id_curso']."><span class='glyphicon glyphicon-trash'></span></a></td><td><a href=./frmactualizarcurso.php?id=".$reg['id_curso']."><span class='glyphicon glyphicon-edit'></span></a></td></tr>";
 								}
 								?>
 								<form  action="addcurso.php" method="POST">

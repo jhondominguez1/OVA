@@ -59,7 +59,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 			$registros=mysqli_query($conexion, "SELECT * FROM areas_conocimiento ")or die ("Problemas en la consulta");
 			while ($reg=mysqli_fetch_array($registros)){
-				echo "<tr><td>".$reg['nombre_area_conocimiento']."</td><td>".$reg['descripcion_area_conocimiento']."</td><td><a href=./eliminararea.php?id=".$reg['id_area_conocimiento'].">Eliminar</a></td><td><a href=./frmactualizararea.php?id=".$reg['id_area_conocimiento'].">Actualizar</a></td></tr>";
+				echo "<tr><td>".$reg['nombre_area_conocimiento']."</td><td>".$reg['descripcion_area_conocimiento']."</td><td><a href=./eliminararea.php?id=".$reg['id_area_conocimiento']."><span class='glyphicon glyphicon-trash'></span></a></td><td><a href=./frmactualizararea.php?id=".$reg['id_area_conocimiento']."><span class='glyphicon glyphicon-edit'></span></a></td></tr>";
 			}
 	    ?>
 		<form  action="addarea.php" method="POST">
