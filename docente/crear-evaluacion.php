@@ -54,64 +54,14 @@
   
  
 	
-  <div class="form-group">
-    <label for="num_pregunta">Numero de Respuestas</label>
-    <input type="text" required class="form-control" id="" name="num_pregunta">
-</div> 
- <center><button type="submit" class="btn btn-success" name="btn-crea-preg">Crear Preguntas</button> </center>
+ <center><button type="submit" class="btn btn-success" name="btn-add-evaluacion">Crear Evaluación</button> </center>
 </form>
 </div>
 
 <hr>
 		
-<div class="form-add-trec">
-  
-  	<div class="titulo-add-recurso"></div>
-  <br>
-  <div class="form-group">
-	<label for="id_respuesta" class="valor">Seleccione una Respuesta</label>  <label for="value_pregunta">Asigne valor</label>
 
-	<form role="form" method="post" action="">
-	<div class="row">
-	<input type="text" value="<?php echo $_POST['id_pregunta'] ?>" name="id_pregunta">
-	<input type="text" value="<?php echo $_POST['id_evaluacion'] ?>" name="id_evaluacion">
-
-	<?php 
 	
-		if (isset($_POST['btn-crea-preg'])) {
-			
-			$num_pregunta = $_POST['num_pregunta'];
-			
-		
-		for ($i=0; $i < $num_pregunta ; $i++) { ?>
-		<div class="col-md-6">
-				<select class="form-control"  name="id_respuesta" id="id_respuesta">
-				<?php
-					$consulta_evaluacion="SELECT * FROM respuestas";
-					$consulta_evaluacion2=mysqli_query($conexion,$consulta_evaluacion) or die ("PROBLEMAS DE CONSULTA");
-					while ($fila=mysqli_fetch_array($consulta_evaluacion2)) {
-					?>
-					<option value="<?php echo $fila[0] ?>"><?php echo "$fila[1]" ?></option>
-					<?php			
-					}					
-				?>
-			</select>
-		</div>
-			<div class="col-md-6">
-				<input type="text" class="form-control" id="" name="value_pregunta">
-			</div>
-	<?php } } ?>	
-	
-	
-	
-	
- </div> 
- <br>
- <br>
- <center><button type="submit" class="btn btn-success" name="btn-add-evaluacion">Crear Evaluacion</button> </center>
-</form>
-</div>
-</div>		
 		
 		<?php 
 
