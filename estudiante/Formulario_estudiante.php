@@ -5,7 +5,7 @@
 ?>
 <html lang="es">
 <head >
-  <title>Login Estudiante</title>
+  <title>Actualizar Información</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../admin/css/bootstrap.min.css">
