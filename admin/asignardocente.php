@@ -39,9 +39,9 @@ tr:nth-child(even){background-color: #f2f2f2}
 						<div class="panel panel-default">
 							<table>
 								<tr>
-									<th data-field="curso" data-sortable="true" >Curso</th>
-									<th data-field="docente" data-sortable="true">Docente</th>
-									<th data-field="acciones" data-sortable="true" colspan=2>Acciones</th>
+									<th data-field="curso" data-sortable="true" ><strong>Curso</strong></th>
+									<th data-field="docente" data-sortable="true"><strong>Docente</strong></th>
+									<th data-field="acciones" data-sortable="true" colspan=2><strong>Acciones</strong></th>
 								</tr>
 								<?php
 								include ("../conex/conexion.php");
