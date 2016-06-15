@@ -20,31 +20,44 @@
 		<header>
 			<?php require('./requires/menu.php'); ?>
 		</header>
-<!--//////////////////////Aqui termina el menu..Y comienza el contenido-->
+<!--////////////
+//////////Aqui termina el menu..Y comienza el contenido-->
+        <center><img src="logo.png" width="1024px" height="720px"></center>
+
 
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
 					
-					<?php 
-						//incluya aqui su formulario----
-					if (isset($_GET['op'])) {
-                                            $op=$_GET['op'];
-							if ($op==0) require('./docente/admin-tipo-recurso.php');
-                                                        if ($op==1) require('./docente/admin-leccion.php');
-                                                        if ($op==2) require('./docente/admin-recursos.php');
-                                                        if ($op==3) require('./docente/crear-evaluacion.php');
-                                                        if ($op==4) require('./docente/respuestas.php');
-														if ($op==5) require('./docente/preguntas.php');
-														if ($op==6) require('./docente/evaluacion.php');
-														
-																			}else{
-						require('./docente/evaluacion.php');
-					}
-					
+					<div  class="modal fade" id="login" tabindex="-1" role="dialog">
+                                            <div class="modal-dialog">   
+                                               <div class="modal-content"> 
+                                                  <div class="modal-header">
+                                                     <h3>Ingresar</h3>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                     <form role="form" action="verificar_login.php" method="POST">
+                                                       <div class="form-group">
+                                                         <label for="usuario">Usuario</label>
+                                                         <input type="text" class="form-control" name="usuario"
+                                                                placeholder="Usuario">
+                                                       </div>
+                                                       <div class="form-group">
+                                                         <label for="password">Contraseña</label>
+                                                         <input type="password" class="form-control" name="password" 
+                                                                placeholder="Contraseña">
+                                                       </div>
 
-					 ?>
+                                                       <input type="submit" class="btn btn-default" value="Ingresar">
+                                                     </form>               
+                                                 </div>
+                                                 <div class="modal-footer">
 
+                                                 </div>
+
+                                             </div>
+                                            </div>
+                                         </div>
 				</div>
 			</div>	
 		
