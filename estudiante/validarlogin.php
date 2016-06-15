@@ -21,7 +21,7 @@ if($row = mysqli_fetch_row($result))
 		{
 			session_start();  
 			//Almacenamos el nombre de usuario en una variable de sesión usuario
-			$_SESSION['nombre_usuario'] = $row=[0];  
+			$_SESSION['nombre_usuario'] = $usu;  
 			//Redireccionamos a la pagina: index.php
 			header("Location: index.html");
 		}

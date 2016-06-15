@@ -34,30 +34,51 @@ function myFunction() {
 
 </body>
 </html> 
-			
-				<div class="panel panel-default">
-					
-						<ul class="nav nav-tabs">
-                                                    <li class="active"><a href="#tab1" onclick="myFunction()"  data-toggle="tab"><?php echo $_SESSION['id_curso'];?>Lista de Usuarios</a></li>
-							<li ><a href="#tab2" data-toggle="tab">Registrar</a></li>
-							
-							</ul>
-		
-						<div class="tab-content">
-							<div class="tab-pane fade in active" id="tab1">
-								<p><iframe id="bajo" name="bajo" src="listarusuario.php" frameborder=0 width=100% height=600px scrolling=yes> </iframe> </p>
-							</div>
-							<div class="tab-pane fade" id="tab2">
-								<iframe id="principal" name="principal" src="frmaddusuario.php" width=100% height=600px scrolling=no frameborder=0> </iframe>
-							</div>
-						</div>
-					</div>
-				</div><!--/.panel-->
-			</div><!--/.col-->
-			
-		</div><!-- /.row -->
-		
-	</div><!--/.main-->
+	<?php
+        require('conexion.php');                                            
+        if (isset($_GET['idcu'])) {
+        $l1="SELECT leccion.id_leccion, leccion.nombre_leccion FROM cursos inner join asignacion_estudiantes on cursos.id_curso=asignacion_estudiantes.id_curso inner join usuarios on asignacion_estudiantes.id_usuario=usuarios.id_usuario inner join roles on roles.id_rol=usuarios.id_rol inner join leccion on leccion.id_curso=cursos.id_curso where cursos.id_curso=".$_GET['idcu']." and usuarios.id_usuario=".$_SESSION['id_usuario']."";
+        $cl1=mysqli_query($conexion,$l1) or die("problemas en la 1 consulta".$l1);
+        ?>
+         <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+             <?php
+            while ($lec=mysqli_fetch_array($cl1)){
+                           
+            ?>
+            <li><a data-toggle="tab" href="#<?php echo $lec['id_leccion'];?>"><?php echo $lec['nombre_leccion'];?></a></li>
+            <?php
+            }
+        
+            ?>
+          </ul>
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+              <h3>HOME</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <?php
+            $l2="SELECT leccion.id_leccion, leccion.nombre_leccion FROM cursos inner join asignacion_estudiantes on cursos.id_curso=asignacion_estudiantes.id_curso inner join usuarios on asignacion_estudiantes.id_usuario=usuarios.id_usuario inner join roles on roles.id_rol=usuarios.id_rol inner join leccion on leccion.id_curso=cursos.id_curso where cursos.id_curso=".$_GET['idcu']." and usuarios.id_usuario=".$_SESSION['id_usuario']."";
+        $c2=mysqli_query($conexion,$l1) or die("problemas en la 1 consulta".$l2);
+         while ($lec2=mysqli_fetch_array($c2)){               
+            ?>
+             <div id="<?php echo $lec2['id_leccion'];?>" class="tab-pane ">
+              <h3>locos</h3>
+              <p>mostrar algo porfa</p>
+            </div>
+            <?php
+            
+        }
+        }
+            ?>
+            
+            
+
+        
+        
+
+				
+        </div><!--/.panel-->
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

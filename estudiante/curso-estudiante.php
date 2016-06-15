@@ -55,17 +55,14 @@ if(!isset($_SESSION['id_usuario'])){
                         if(isset($_SESSION['id_usuario'])){ 
                             $id_usu=$_SESSION['id_usuario'];
                             //echo "este es el id".$id_usu;
-                                $cscursos="SELECT cursos.nombre_curso, cursos.descripcion_curso,cursos.id_curso, leccion.id_leccion FROM cursos 
+                                $cscursos="SELECT cursos.nombre_curso, cursos.descripcion_curso,cursos.id_curso FROM cursos 
                                  inner join asignacion_estudiantes on cursos.id_curso=asignacion_estudiantes.id_curso 
                                    inner join usuarios on asignacion_estudiantes.id_usuario=usuarios.id_usuario 
-                                    inner join roles on roles.id_rol=usuarios.id_rol inner join leccion on leccion.id_curso=cursos.id_curso where usuarios.id_usuario=".$id_usu;
+                                    inner join roles on roles.id_rol=usuarios.id_rol  where usuarios.id_usuario=".$id_usu;
                                                  //echo $cscursos;
                                     $cursos=mysqli_query($conexion,$cscursos) or die("problemas en la 1 consulta".$cscursos);   
                                     while ($cusu=mysqli_fetch_array($cursos)){
-                                                                 echo "<li><a href='curso-estudiante.php?id=".$cusu[2]."'>".$cusu[0]."</a></li>";
-                                                                 
-                                                                  $_SESSION['id_curso'] = $cusu[2];
-              
+                                                                 echo "<li><a href='curso-estudiante.php?idc=".$cusu[2]."'>".$cusu[0]."</a></li>";              
                                                                 }
                         }
                         ?>
@@ -81,9 +78,18 @@ if(!isset($_SESSION['id_usuario'])){
 
 	</div><!--imagen casa / inicio-->
 <div>
-    <iframe id="principal" name="principal" src="lecciones.php" width=100% height=600px scrolling=no frameborder=0> </iframe>
-	
-	</div>                       
+    <!--<iframe id="principal" name="principal" src="lecciones.php" width=100% height=600px scrolling=no frameborder=0> </iframe>-->
+	<?php
+                                if (isset($_GET['idc'])) {
+                                    
+                                
+        ?>
+            <iframe name="principal"  id="principal" src="lecciones.php?idcu=<?php echo $_GET['idc'] ;?>"  width=100% height=600px scrolling=no frameborder=0></iframe> 
+	<?php
+        }
+        ?>
+
+</div>                       
                                 						
 		
                         
