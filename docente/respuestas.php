@@ -5,7 +5,7 @@
  ?>
  
 <div class="form-add-trec">
-	<div class="titulo-add-recurso">Agregrar Respuetas</div>
+	<div class="titulo-add-recurso">Agregar Respuestas</div>
 	<form role="form" method="post" action="">
   <div class="form-group">
     <label for="nom-respuesta">Respuesta 1</label>
