@@ -4,147 +4,107 @@ if(!isset($_SESSION['id_usuario'])){
          header('Location: login.php');
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Cursos Estudiantes</title>
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <!--<link rel="stylesheet" href="jqm/jquery.mobile-1.3.2.css">-->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">  
-  <link rel="stylesheet" type="text/css" href="css/estilos.css">
-  <link rel="stylesheet" type="text/css" href="fonts/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>index</title>
 
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+
+<script src="js/lumino.glyphs.js"></script>
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
 
 </head>
-<body class="t1">
 
-<?php
-include("conexion.php");
-$id_usu=$_SESSION['id_usuario'];
-            echo "este es el id".$id_usu;
-            $cscursos="SELECT cursos.nombre_curso, cursos.descripcion_curso,cursos.id_curso, leccion.id_leccion FROM cursos 
-                  inner join asignacion_estudiantes on cursos.id_curso=asignacion_estudiantes.id_curso 
-                  inner join usuarios on asignacion_estudiantes.id_usuario=usuarios.id_usuario 
-                  inner join roles on roles.id_rol=usuarios.id_rol inner join leccion on leccion.id_curso=cursos.id_curso where usuarios.id_usuario=".$id_usu;
-                  echo $cscursos;
-                   $cursos=mysqli_query($conexion,$cscursos) or die("problemas en la 1 consulta".$cscursos);
-            ?>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <a class="navbar-brand" href="../index.php">Ova Electiva II</a> 
-          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Seleccione Curso<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <?php 
-         
-
-                
-                while ($cusu=mysqli_fetch_array($cursos)){
-                   echo "<li><a href='curso-estudiante.php?id=".$cusu[3]."'>".$cusu[0]."</a></li>";
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><!-- texto del banner-->
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#"><span>Proyect</span>OVA</a>
+		</div>		
+	</nav>
+		
+		
+		<!--titulo menu --->
+		
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		<form role="search">
+			<div class="form-group">
+                            <?php
+                            
+				echo 'Bienvenido estudiante <br>'.$_SESSION['nombre_usuario'];
+                            ?>
+			</div>
+		</form>
+		
+		<!-- menu -->
+		
+		<ul class="nav menu">
+			<li><a href="#" target="principal"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg> Mis cursos</a></li>
+                        <?php
+                        require('conexion.php');
+                        if(isset($_SESSION['id_usuario'])){ 
+                            $id_usu=$_SESSION['id_usuario'];
+                            //echo "este es el id".$id_usu;
+                                $cscursos="SELECT cursos.nombre_curso, cursos.descripcion_curso,cursos.id_curso, leccion.id_leccion FROM cursos 
+                                 inner join asignacion_estudiantes on cursos.id_curso=asignacion_estudiantes.id_curso 
+                                   inner join usuarios on asignacion_estudiantes.id_usuario=usuarios.id_usuario 
+                                    inner join roles on roles.id_rol=usuarios.id_rol inner join leccion on leccion.id_curso=cursos.id_curso where usuarios.id_usuario=".$id_usu;
+                                                 //echo $cscursos;
+                                    $cursos=mysqli_query($conexion,$cscursos) or die("problemas en la 1 consulta".$cscursos);   
+                                    while ($cusu=mysqli_fetch_array($cursos)){
+                                                                 echo "<li><a href='curso-estudiante.php?id=".$cusu[3]."'>".$cusu[0]."</a></li>";
               
-                  }
+                                                                }
+                        }
+                        ?>
+			<li><a href="#" target="principal"><svg class="glyph stroked tag"><use xlink:href="#stroked-tag"/></svg>Editar Perfil</a></li>
+			<li><a href="#" target="principal"> login</a></li><!--solo esta para probar el formulario login, esta opcion no existe en el menu administrador-->
+			<li><a href="#"> opcion2</a></li>
+			<li><a href="#"> opcion3</a></li>
+			
+			
+			<li role="presentation" class="divider"></li>
+			<li><a href="cerrar.php"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> salir</a></li>
+		</ul>
 
-                   ?>
-            
-          </ul>
-        </li>
-      </ul>
- 
-      <ul class="nav navbar-nav navbar-right">
-        <ul class="nav navbar-nav">
-        <li><a href="Formulario_estudiante.php">Editar Perfil</a></li>
-        <li><a href="cerrar_sesion.php" >Cerrar Sesión</a></li>
+	</div><!--imagen casa / inicio-->
+        <div class="container" >
+            <div data-role="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">este es un ensayo</div>
+                          
 
+            </div>
+        </div>                       
+                                						
+		
+                        
 
-      </ul>
-
-    </div>
-  </div>
-</nav>
-
-<?php
-if (isset($_GET['id'])) {
-  $c=$_GET['id'];
-    echo "este es el curso actual".$c;
-    $sql1="SELECT leccion.id_leccion,recursos.id_recurso,recursos.nombre_recurso,evaluacion.id_evaluacion, evaluacion.nombre_evaluacion from leccion
-inner join recursos on leccion.id_leccion=recursos.id_leccion
-inner join evaluacion on evaluacion.id_leccion=leccion.id_leccion where leccion.id_leccion=".$c;
-
-//echo $sql1;
-
-$resul=mysqli_query($conexion,$sql1) or die("problemas en la 1 consulta".$sqll);
-
-?> 
-<div data-role="row">
-  <div class="col-md-4">
-    <div data-rol="row">
-         <div class="col-sm-2 sidenav">
-         <div class="well">
-            <?php 
-         
-
-                
-                while ($leccion=mysqli_fetch_array($resul)){
-                   echo "<li><button name='boton' id='".$leccion[1]."' type='button' class='btn btn-primary btn-lg'>".$leccion[2]."</a></li>";
-              
-                 }
-
-                   ?>
-
-      
-
-      </div>
-      <div class="well">
-       <button name="boton" id="boton2" type="button" class="btn btn-primary btn-lg">Contenido</button>
-      </div>
-       <div class="well">
-       <button name="boton" id="boton3" type="button" class="btn btn-primary btn-lg">Evaluaciones</button>
-      </div>
-       <div class="well">
-       <button name="boton" id="boton4" type="button" class="btn btn-primary btn-lg">Notas</button>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-8">
-  </div>
-</div>
-  <?php
-   
-  # code...
-}
-?>
-<table width="100%" height="500" border="0" class="t1">
-  <tr>
-    <td width="20%">
-   
-    </td>
-
-    <td  width="80%" align="center">
-     <div id="capa"><img src="imgs/bienvenidos.jpg" align="rigth"></div>
-    <br>
-    
-    </td>
-    
-    
-  </tr>
-
-</table>
-
-
-
-
-<footer class="footer text-center">
-  <p class="pfooter">Universidad de Nariño <br>© All RIGHTS RESERVED<br>2016</p>
-</footer>
-
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script>
+		$(window).on('resize', function () {
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+	</script>	
 </body>
 
-</body>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/java.js"></script> 
 </html>
