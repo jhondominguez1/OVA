@@ -1,4 +1,10 @@
-<?php session_start();?>
+<?php
+session_start();
+if(!isset($_SESSION['id_usuario'])){ 
+header("Location: index.html");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,12 +36,12 @@ function myFunction() {
 <?php
 include("conexion.php");
 $id_usu=$_SESSION['id_usuario'];
-            echo "este es el id".$id_usu;
+            //echo "este es el id".$id_usu;
             $cscursos="SELECT cursos.nombre_curso, cursos.descripcion_curso,cursos.id_curso, leccion.id_leccion FROM cursos 
                   inner join asignacion_estudiantes on cursos.id_curso=asignacion_estudiantes.id_curso 
                   inner join usuarios on asignacion_estudiantes.id_usuario=usuarios.id_usuario 
                   inner join roles on roles.id_rol=usuarios.id_rol inner join leccion on leccion.id_curso=cursos.id_curso where usuarios.id_usuario=".$id_usu;
-                  echo $cscursos;
+                  //echo $cscursos;
                    $cursos=mysqli_query($conexion,$cscursos) or die("problemas en la 1 consulta".$cscursos);
                     ?>
 			
