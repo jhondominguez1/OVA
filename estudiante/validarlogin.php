@@ -37,8 +37,7 @@ if($row = mysqli_fetch_row($result))
 
 			$_SESSION['id_usuario'] = $c;
 			 $_SESSION['nombre_usuario'] = $usu;
-                        $_SESSION['id_curso'] = $n;
-			header("Location: paneluser.html");
+			header("Location: index.php");
 		
 		}
 	}
