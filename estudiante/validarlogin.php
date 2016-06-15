@@ -8,7 +8,9 @@ $pss=$_POST['password'];
 $i=mysqli_query($conexion,"SELECT id_usuario FROM usuarios WHERE nombre_usuario='$usu' AND password='$pss'") or die("error en la consulta");
 $r= mysqli_fetch_row($i);
 $c=$r[0];
-//echo $c;
+//echo $c;<?php
+
+
 
 if (isset($usu) && !empty($usu) && isset($pss) &&!empty($pss)){
 
@@ -35,7 +37,8 @@ if($row = mysqli_fetch_row($result))
 
 			$_SESSION['id_usuario'] = $c;
 			 $_SESSION['nombre_usuario'] = $usu;
-			header("Location: curso-estudiante.php");
+                        $_SESSION['id_curso'] = $n;
+			header("Location: paneluser.html");
 		
 		}
 	}
