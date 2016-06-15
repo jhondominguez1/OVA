@@ -58,6 +58,48 @@
                                              </div>
                                             </div>
                                          </div>
+                                    <div  class="modal fade" id="registrarse" tabindex="-1" role="dialog">
+                                            <div class="modal-dialog">   
+                                               <div class="modal-content"> 
+                                                  <div class="modal-header">
+                                                     <h3>Nuevo usuario</h3>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                     <form role="form" action="verificar_login.php" method="POST">
+                                                       <div class="form-group">
+                                                         <label for="tipo_id">Tipo de Identificación</label>
+                                                         <select  class="form-control" name='ncat' required>
+                                                             <option value="0">Cedula de ciudadanía</option>
+                                                             <option value="1">Targeta de identidad</option>
+                                                             <option value="2">Cedula de extrangería</option>
+                                                         </select>
+                                                       </div>
+                                                         <div class="form-group">
+                                                         <label for="numero_id">Numero Identificación</label>
+                                                         <input type="text" class="form-control" name="numerio_id" 
+                                                                placeholder="Numero id" required>
+                                                       </div>
+                                                       <div class="form-group">
+                                                         <label for="nusuario">Nombre Usuario</label>
+                                                         <input type="text" class="form-control" name="nusuario" 
+                                                                placeholder="Usuario" required>
+                                                       </div>
+                                                         <div class="form-group">
+                                                         <label for="password">Password</label>
+                                                         <input type="password" class="form-control" name="npass" 
+                                                                placeholder="password" required>
+                                                       </div>
+
+                                                       <input type="success" class="btn btn-default" value="Registrarse">
+                                                     </form>               
+                                                 </div>
+                                                 <div class="modal-footer">
+
+                                                 </div>
+
+                                             </div>
+                                            </div>
+                                         </div>
 				</div>
 			</div>	
 		
