@@ -62,7 +62,9 @@ if(!isset($_SESSION['id_usuario'])){
                                                  //echo $cscursos;
                                     $cursos=mysqli_query($conexion,$cscursos) or die("problemas en la 1 consulta".$cscursos);   
                                     while ($cusu=mysqli_fetch_array($cursos)){
-                                                                 echo "<li><a href='curso-estudiante.php?id=".$cusu[3]."'>".$cusu[0]."</a></li>";
+                                                                 echo "<li><a href='curso-estudiante.php?id=".$cusu[2]."'>".$cusu[0]."</a></li>";
+                                                                 
+                                                                  $_SESSION['id_curso'] = $cusu[2];
               
                                                                 }
                         }
@@ -78,14 +80,10 @@ if(!isset($_SESSION['id_usuario'])){
 		</ul>
 
 	</div><!--imagen casa / inicio-->
-        <div class="container" >
-            <div data-role="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-8">este es un ensayo</div>
-                          
-
-            </div>
-        </div>                       
+<div>
+    <iframe id="principal" name="principal" src="lecciones.php" width=100% height=600px scrolling=no frameborder=0> </iframe>
+	
+	</div>                       
                                 						
 		
                         
