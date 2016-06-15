@@ -32,9 +32,9 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accede<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#" data-toggle="modal" data-target="#myModal">Entrar</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#login">Ingresar</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Registrarse</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#registrarse">Registrate</a></li>
           </ul>
         </li>
         <li class="dropdown">
