@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php 
+        //Este es el index del docente cuando ingresa su user y pass....
 	//incluyendo archivos necesarios...
 	require('./conex/conexion.php');
 
