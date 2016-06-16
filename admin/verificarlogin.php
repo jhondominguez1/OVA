@@ -2,8 +2,8 @@
 <?php
 require("../conex/conexion.php");
 $password=$_POST['password'];
-$nombre_usuario=$_POST['nombre_usuario'];
-if (isset($_POST['nombre_usuario']) && !empty($_POST['nombre_usuario']) && isset($_POST['password']) &&!empty($_POST['password'])){
+$nombre_usuario=$_POST['usuario'];
+if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['password']) &&!empty($_POST['password'])){
 
 
 $result=mysqli_query($conexion,"SELECT nombre_usuario, password, id_rol FROM usuarios WHERE nombre_usuario='$_POST[nombre_usuario]' AND password='$_POST[password]'") or die("error en la consulta");
