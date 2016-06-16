@@ -62,7 +62,8 @@ if(isset($_SESSION['id_usuario'])){
                             <a href="#"><i class="fa fa-fw fa-user"></i> Ver Perfil</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Editar Pefil</a>
+                        <!-- se daño el anterior por eso cambie el formulari -->
+                            <a href="frm_perfil_est.php" target="formularios"><i class="fa fa-fw fa-gear"></i> Editar Pefil</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -101,7 +102,7 @@ if(isset($_SESSION['id_usuario'])){
             </div>
       </nav>
 
-<div class="mg principal"><iframe class="sm" style="width: 90%; height: 80%" name="formularios"></iframe></div>
+<div class="mg principal"><iframe class="sm" style="width: 90%; height: 95%" name="formularios"></iframe></div>
         
          
     <script src="js/jquery.js"></script>
