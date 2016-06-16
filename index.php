@@ -48,7 +48,7 @@
                                                                 placeholder="Contraseña">
                                                        </div>
 
-                                                       <input type="submit" class="btn btn-default" value="Ingresar">
+                                                         <input type="submit" class="btn btn-default" value="Ingresar" name="enviar">
                                                      </form>               
                                                  </div>
                                                  <div class="modal-footer">
