@@ -3,10 +3,9 @@ if (!isset($_SESSION['id_usuario'])) {
     
     header('location:login.php');
     }
-if (isset($_GET['idc'])) {
+if (isset($_GET['idl'])) {
     require('conexion.php'); 
-    $l1="SELECT leccion.id_leccion, leccion.nombre_leccion, cursos.nombre_curso FROM cursos inner join asignacion_estudiantes on cursos.id_curso=asignacion_estudiantes.id_curso inner join usuarios on asignacion_estudiantes.id_usuario=usuarios.id_usuario inner join roles on roles.id_rol=usuarios.id_rol inner join leccion on leccion.id_curso=cursos.id_curso where cursos.id_curso=".$_GET['idc']." and usuarios.id_usuario=".$_SESSION['id_usuario']."";
-        $cl1=mysqli_query($conexion,$l1) or die("problemas en la 1 consulta".$l1);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +47,7 @@ if (isset($_GET['idc'])) {
               <!--Brand and toggle get grouped for better mobile display -->
            <div class="navbar-header">
                 
-               <a class="navbar-brand" href="#">Bienvenido <?php echo 'al curso '.$_GET['idc'];?></a>
+               <a class="navbar-brand" href="#"></a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -70,18 +69,7 @@ if (isset($_GET['idc'])) {
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <?php
-                         while ($lec=mysqli_fetch_array($cl1)){
-                           
-                    ?>
-                    <li>
-                        <a href="recurso.php?idl=<?php echo $lec['id_leccion'];?>" ><i class="fa fa-fw fa-bar-chart-o"></i><?php echo $lec['nombre_leccion'];?>
-                        </a>
-                    </li>
-                    <?php
-                    }
-}
-                    ?>
+                   
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
