@@ -1,7 +1,3 @@
-<?php session_start();
-   
-    require('conexion.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Cursos</title>
+    <title>SB Admin - Bootstrap Admin Template</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">SB Admin</a>
+                <a class="navbar-brand" href="index.php">SB Admin</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -156,7 +152,9 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                   
+                    <li>
+                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
                     <li>
                         <a href="charts.php"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                     </li>
@@ -186,7 +184,9 @@
                     <li class="active">
                         <a href="blank-page.php"><i class="fa fa-fw fa-file"></i> Blank Page</a>
                     </li>
-                    
+                    <li>
+                        <a href="index-rtl.php"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -204,7 +204,9 @@
                             <small>Subheading</small>
                         </h1>
                         <ol class="breadcrumb">
-                           
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
+                            </li>
                             <li class="active">
                                 <i class="fa fa-file"></i> Blank Page
                             </li>

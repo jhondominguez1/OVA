@@ -15,6 +15,14 @@
     <link href="css/plugins/morris.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#boton1").click(function(event) {
+          $("#capa").load('blank-page.php');
+        });
+      });
+      
+    </script>
   
 </head>
 <body>
@@ -66,14 +74,15 @@
                             </li>
                         </ul>
                     </li>
+
                     <li>
-                        <a href="blank-page.php"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                        <a  href="curso_estudiante.php" target="formularios"><i class="fa fa-fw fa-file"></i> Blank Page</a>
                     </li>
                    </ul>
             </div>
       </nav>
 
-<div  class="mg "></div>
+<div class="mg principal"><iframe class="sm" style="width: 90%; height: 80%" name="formularios"></iframe></div>
         
          
     <script src="js/jquery.js"></script>

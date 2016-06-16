@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php session_start();
 if (!isset($_SESSION['id_usuario'])) {
     
@@ -6,16 +7,13 @@ if (!isset($_SESSION['id_usuario'])) {
 require('conexion.php');
 if(isset($_SESSION['id_usuario'])){ 
     $id_usu=$_SESSION['id_usuario'];
-    //echo "este es el id".$id_usu;
-    $cscursos="SELECT cursos.nombre_curso, cursos.descripcion_curso,cursos.id_curso FROM cursos 
-               inner join asignacion_estudiantes on cursos.id_curso=asignacion_estudiantes.id_curso 
-               inner join usuarios on asignacion_estudiantes.id_usuario=usuarios.id_usuario 
-               inner join roles on roles.id_rol=usuarios.id_rol  where usuarios.id_usuario=".$id_usu;
-               //echo $cscursos;
-    $cursos=mysqli_query($conexion,$cscursos) or die("problemas en la 1 consulta".$cscursos);
-                        
+     //echo "este es el id".$id_usu;
+     $cscursos="SELECT cursos.nombre_curso, cursos.descripcion_curso,cursos.id_curso FROM cursos 
+                inner join asignacion_estudiantes on cursos.id_curso=asignacion_estudiantes.id_curso 
+                inner join usuarios on asignacion_estudiantes.id_usuario=usuarios.id_usuario 
+                inner join roles on roles.id_rol=usuarios.id_rol  where usuarios.id_usuario=".$id_usu;
+     $cursos=mysqli_query($conexion,$cscursos) or die("problemas en la 1 consulta".$cscursos);
 ?>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -35,7 +33,7 @@ if(isset($_SESSION['id_usuario'])){
     <script type="text/javascript">
       $(document).ready(function() {
         $("#boton1").click(function(event) {
-          $("#capa").load('curso_estudiante.php');
+          $("#capa").load('blank-page.php');
         });
       });
       
@@ -58,7 +56,7 @@ if(isset($_SESSION['id_usuario'])){
 
             <ul class="nav navbar-right top-nav">     
              <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo $_SESSION['nombre_usuario'];?> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo " ".$_SESSION['nombre_usuario'];?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Ver Perfil</a>
@@ -83,14 +81,13 @@ if(isset($_SESSION['id_usuario'])){
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa fa fa-book fa-fw"></i> Mis Cursos <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
-                            <?php
-                                while ($cusu=mysqli_fetch_array($cursos)){
-                                    echo "<li>
-                                           <a target='formularios' href='curso_estudiante.php?idc=".$cusu[2]."'>".$cusu[0]."</a>
-                                          </li>";              
-                                }
-                            }
-                            ?>
+                            <?php   
+                                    while ($cusu=mysqli_fetch_array($cursos)){
+                                     echo "<li>
+                                            <a target='formularios' href='curso_estudiante.php?idc=".$cusu[2]."'>".$cusu[0]."</a></li>";              
+                                    }
+                                 }
+                                 ?>
                             <li>
                                 <a href="#">Dropdown Item</a>
                             </li>
@@ -103,9 +100,8 @@ if(isset($_SESSION['id_usuario'])){
                    </ul>
             </div>
       </nav>
-    </div>
 
-<div class="mg principal"> <iframe class="sm" style="width: 90%; height: 80%" name="formularios" ></iframe></div>
+<div class="mg principal"><iframe class="sm" style="width: 90%; height: 80%" name="formularios"></iframe></div>
         
          
     <script src="js/jquery.js"></script>
