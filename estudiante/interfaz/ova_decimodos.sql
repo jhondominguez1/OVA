@@ -3,18 +3,12 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-06-2016 a las 23:25:50
+-- Tiempo de generación: 17-06-2016 a las 09:32:16
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de datos: `ova_decimodos`
@@ -56,6 +50,14 @@ CREATE TABLE IF NOT EXISTS `asignacion_docentes` (
   KEY `fk_id_curso_idx` (`id_curso`),
   KEY `fk_id_docente_idx` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `asignacion_docentes`
+--
+
+INSERT INTO `asignacion_docentes` (`id_curso`, `id_usuario`) VALUES
+(2, 4),
+(3, 5);
 
 -- --------------------------------------------------------
 
@@ -138,6 +140,14 @@ CREATE TABLE IF NOT EXISTS `evaluaciones_preguntas` (
   KEY `fk_id_pregunta_idx` (`id_pregunta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `evaluaciones_preguntas`
+--
+
+INSERT INTO `evaluaciones_preguntas` (`id_evaluacion`, `id_pregunta`) VALUES
+(1, 1),
+(1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -173,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `leccion` (
 --
 
 INSERT INTO `leccion` (`id_leccion`, `nombre_leccion`, `descripcion_leccion`, `id_curso`) VALUES
-(1, 'lección 1 para pedagogia', 'En esta lecciÃ³n se pretende..', 2),
+(1, 'leccin 1 para pedagogia', 'En esta lecciÃ³n se pretende..', 2),
 (2, 'leccion 2 para pedagogia', 'En esta lecciÃ³n se busca', 2),
 (3, 'leccion 1 algorit', 'descrip lec 1 curso algoritmos', 3),
 (4, 'leccion 2 algorit', 'descrip lec 2 curso algoritmos', 3);
@@ -186,9 +196,18 @@ INSERT INTO `leccion` (`id_leccion`, `nombre_leccion`, `descripcion_leccion`, `i
 
 CREATE TABLE IF NOT EXISTS `preguntas` (
   `id_pregunta` int(11) NOT NULL AUTO_INCREMENT,
-  `pregunta` varchar(45) DEFAULT NULL,
+  `pregunta` varchar(800) DEFAULT NULL,
   PRIMARY KEY (`id_pregunta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Volcado de datos para la tabla `preguntas`
+--
+
+INSERT INTO `preguntas` (`id_pregunta`, `pregunta`) VALUES
+(1, ' ¿Cuál es el rasgo más notorio en el sistema de enseñanza de los jesuitas?'),
+(2, '¿Con que otro nombre se lo conoce a la Pedagogía Tradicional?'),
+(3, '¿A quién se le considera el Padre de la Didáctica por su influencia en la ciencia Pedagógica?');
 
 -- --------------------------------------------------------
 
@@ -203,6 +222,18 @@ CREATE TABLE IF NOT EXISTS `preguntas_respuestas` (
   KEY `fk_id_pregunta_idx` (`id_pregunta`),
   KEY `fk_id_respuesta_idx` (`id_respuesta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `preguntas_respuestas`
+--
+
+INSERT INTO `preguntas_respuestas` (`id_pregunta`, `id_respuesta`, `value`) VALUES
+(1, 1, 0),
+(1, 2, 0),
+(1, 3, 0),
+(2, 3, 0),
+(1, 4, 0),
+(2, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -219,14 +250,15 @@ CREATE TABLE IF NOT EXISTS `recursos` (
   PRIMARY KEY (`id_recurso`),
   KEY `fk_animacion_leccion1_idx` (`id_leccion`),
   KEY `fk_recursos_tipo_recurso1_idx` (`id_tipo_recurso`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Volcado de datos para la tabla `recursos`
 --
 
 INSERT INTO `recursos` (`id_recurso`, `nombre_recurso`, `link_recurso`, `id_leccion`, `id_tipo_recurso`) VALUES
-(1, 'danirijilla pilla', 'no found', 1, 2);
+(1, 'recurso para pedagogia', 'https://www.youtube.com/watch?v=N2IUGAGDYws', 1, 2),
+(2, 'recurso 2 curso 1 leccion 1', 'https://www.youtube.com/watch?v=LmcYu8mpmNc', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -238,7 +270,19 @@ CREATE TABLE IF NOT EXISTS `respuestas` (
   `id_respuesta` int(11) NOT NULL AUTO_INCREMENT,
   `respuesta` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_respuesta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Volcado de datos para la tabla `respuestas`
+--
+
+INSERT INTO `respuestas` (`id_respuesta`, `respuesta`) VALUES
+(1, 'respuesta correcta para la pregunta 1'),
+(2, 'respuesta correcta para la pregunta 2'),
+(3, 'a'),
+(4, 'b'),
+(5, 'c'),
+(6, 'd');
 
 -- --------------------------------------------------------
 
@@ -306,7 +350,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `tipo_identificacion`, `numero_identificacion`, `nombre_usuario`, `password`, `id_rol`) VALUES
 (1, 'Cedula de ciudadania', 1085269729, 'luis', '123', 1),
-(2, 'Cedula de ciudadania', 1085000000, 'marcela salazar', '123', 3),
+(2, 'Cedula de ciudadania', 10850, 'marcela', '123', 3),
 (3, 'Cedula de ciudadania', 1085000000, 'daniel', '123', 1),
 (4, 'Cedula de ciudadanÃ­a', 105897983, 'milton', '123', 2),
 (5, 'Cedula Ciudadania', 2110102134, 'victor', '123', 2),
@@ -380,7 +424,3 @@ ALTER TABLE `recursos`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `fk_usuarios_roles` FOREIGN KEY (`id_rol`) REFERENCES `roles` (`id_rol`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
