@@ -21,7 +21,7 @@ if($row = mysqli_fetch_row($result))
 		{
 			session_start();
 			$_SESSION['nombre_usuario'] = $nombre_usuario;  
-			header("Location: ../index.php");
+			header("Location: ../docente/index_doc.php");
 		}
 			elseif($row[2]==3)
 		{
