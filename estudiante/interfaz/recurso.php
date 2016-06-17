@@ -9,7 +9,8 @@ if (isset($_GET['idl'])) {
     $cl=mysqli_query($conexion,$l) or die("problemas en la 1 consulta".$l);
     $r="SELECT * FROM recursos inner join tipos_recursos on recursos.id_tipo_recurso=tipos_recursos.id_tipo_recurso inner join leccion on leccion.id_leccion=recursos.id_leccion where leccion.id_leccion=".$_GET['idl'];
     $cr=mysqli_query($conexion,$r) or die("problemas en la 1 consulta".$r);
-    
+    $r2="SELECT * FROM recursos inner join tipos_recursos on recursos.id_tipo_recurso=tipos_recursos.id_tipo_recurso inner join leccion on leccion.id_leccion=recursos.id_leccion where leccion.id_leccion=".$_GET['idl'];
+    $cr2=mysqli_query($conexion,$r2) or die("problemas en la 1 consulta".$r2);
 
 ?>
 <!DOCTYPE html>
@@ -50,8 +51,21 @@ if (isset($_GET['idl'])) {
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
               <!--Brand and toggle get grouped for better mobile display -->
-           <div class="navbar-header">
-                
+           <div class="navbar-header"> 
+               <ul class="nav navbar-nav ">
+                <?php
+                         while ($lec=mysqli_fetch_array($cl)){
+                           
+                    ?>
+                    <li>
+                        <a href="curso_estudiante.php?idc=<?php echo $lec['id_curso'];?>" ><i class="fa fa-fw fa-dashboard"></i>Lecciones\Recursos
+                        </a>
+                    </li>
+                    <?php
+                    }
+
+                    ?>
+               </ul>
                <a class="navbar-brand" href="#"></a>
             </div>
             <!-- Top Menu Items -->
@@ -74,13 +88,12 @@ if (isset($_GET['idl'])) {
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <?php
-                         while ($lec=mysqli_fetch_array($cl)){
+                     <?php
+                         while ($rec2=mysqli_fetch_array($cr2)){
                            
                     ?>
                     <li>
-                        <a href="curso_estudiante.php?idc=<?php echo $lec['id_curso'];?>" ><i class="fa fa-fw fa-dashboard"></i>Mas Lecciones
-                        </a>
+                        <a href="#"><i class="fa fa-fw fa-dashboard"></i><?php echo $rec2['nombre_recurso'];?></a>                        
                     </li>
                     <?php
                     }

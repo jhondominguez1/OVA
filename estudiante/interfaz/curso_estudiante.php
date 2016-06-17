@@ -48,7 +48,7 @@ if (isset($_GET['idc'])) {
               <!--Brand and toggle get grouped for better mobile display -->
            <div class="navbar-header">
                 
-               <a class="navbar-brand" href="#">Bienvenido <?php echo 'al curso '.$_GET['idc'];?></a>
+               <a class="navbar-brand" href="curso_estudiante.php">Bienvenido <?php echo 'al curso '.$_GET['idc'];?></a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
