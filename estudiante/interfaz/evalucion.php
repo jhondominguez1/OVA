@@ -3,11 +3,15 @@ if (!isset($_SESSION['id_usuario'])) {
     
     header('location:login.php');
     }
-if (isset($_GET['idc'])) {
+if (isset($_GET['idl'])) {
     require('conexion.php'); 
-    $l1="SELECT leccion.id_leccion, leccion.nombre_leccion, cursos.nombre_curso FROM cursos inner join asignacion_estudiantes on cursos.id_curso=asignacion_estudiantes.id_curso inner join usuarios on asignacion_estudiantes.id_usuario=usuarios.id_usuario inner join roles on roles.id_rol=usuarios.id_rol inner join leccion on leccion.id_curso=cursos.id_curso where cursos.id_curso=".$_GET['idc']." and usuarios.id_usuario=".$_SESSION['id_usuario']."";
-    $cl1=mysqli_query($conexion,$l1) or die("problemas en la 1 consulta".$l1);
-    
+    $l="SELECT cursos.id_curso,cursos.nombre_curso FROM cursos inner join leccion on leccion.id_curso=cursos.id_curso where leccion.id_leccion=".$_GET['idl'];
+    $cl=mysqli_query($conexion,$l) or die("problemas en la 1 consulta".$l);
+    $r="SELECT * FROM recursos inner join tipos_recursos on recursos.id_tipo_recurso=tipos_recursos.id_tipo_recurso inner join leccion on leccion.id_leccion=recursos.id_leccion where leccion.id_leccion=".$_GET['idl'];
+    $cr=mysqli_query($conexion,$r) or die("problemas en la 1 consulta".$r);
+    $r2="SELECT * FROM recursos inner join tipos_recursos on recursos.id_tipo_recurso=tipos_recursos.id_tipo_recurso inner join leccion on leccion.id_leccion=recursos.id_leccion where leccion.id_leccion=".$_GET['idl'];
+    $cr2=mysqli_query($conexion,$r2) or die("problemas en la 1 consulta".$r2);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,9 +51,27 @@ if (isset($_GET['idc'])) {
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
               <!--Brand and toggle get grouped for better mobile display -->
-           <div class="navbar-header">
-                
-               <a class="navbar-brand" href="curso_estudiante.php">Bienvenido</a>
+           <div class="navbar-header"> 
+               <ul class="nav navbar-nav ">
+                                   
+                <?php
+                         while ($lec=mysqli_fetch_array($cl)){
+                           
+                    ?>
+                    <li>
+                        <a href="curso_estudiante.php?idc=<?php echo $lec['id_curso'];?>" ><i class="fa fa-fw fa-dashboard"></i>Lecciones\Evaluaciones
+                        </a>
+                    </li>
+                    <li>
+                        <a href="curso_estudiante.php?idc=<?php echo $lec['id_curso'];?>" ><i class="fa fa-fw fa-dashboard"></i><?php echo $lec['id_curso'];?>
+                        </a>
+                    </li>
+                    <?php
+                    }
+
+                    ?>
+               </ul>
+               <a class="navbar-brand" href="#"></a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -70,37 +92,26 @@ if (isset($_GET['idc'])) {
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-               <ul class="nav navbar-nav side-nav">
-                  
-                            <?php
-                             while ($lec=mysqli_fetch_array($cl1)){
-                           
-                            ?>
-                     
+                <ul class="nav navbar-nav side-nav">
+                    <li><a href="#">Recuros Disponibles</a></li>
+                    
                     <li>
-                            <a href="javascript:;" data-toggle="collapse" data-target="#<?php echo $lec['id_leccion'];?>"><i class="fa fa fa fa-book fa-fw"></i> <?php echo " ".$lec['nombre_leccion'];?> <i class="fa fa-fw fa-caret-down"></i></a>
-                                <ul id="<?php echo $lec['id_leccion'];?>" class="collapse">
-                                    <li>
-                                <a href="recurso.php?idl=<?php echo $lec['id_leccion'];?>" ><i class="fa fa-edit"></i>Recursos </a>
-                                
-                                    </li>
-                                    <li>
-                                <a href="evaluacion.php?idl=<?php echo $lec['id_leccion'];?>" ><i class="fa fa-edit"></i>Evaluaciones </a>
-                                    </li>
-                                </ul>
-                    </li>           
-              
-                            <?php
-                            }
-}
-                            ?>
-                   </ul>               
-                        
-                        
-                 
+                        <ul>
+                     <?php
+                           while ($rec2=mysqli_fetch_array($cr2)){
 
-               
-                
+                           ?>
+                           <li>
+                               <a href="#"><i class="fa fa-check-square-o"></i><?php echo " ".$rec2['nombre_recurso'];?></a>                        
+                           </li>
+                           <?php
+                           }
+
+                           ?>
+                        </ul>
+                    </li>
+                    
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </nav>
@@ -113,7 +124,19 @@ if (isset($_GET['idc'])) {
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            esto es el espacio en blanco
+                            <?php
+                         while ($rec=mysqli_fetch_array($cr)){
+                           
+                    ?>
+                    <li>
+                        <h1></i><?php echo $rec['nombre_recurso'];?></h1>
+                        
+                        
+                    </li>
+                    <?php
+                    }
+}
+                    ?>
                             <small>Subheading</small>
                         </h1>
                         <ol class="breadcrumb">
