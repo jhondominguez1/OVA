@@ -72,7 +72,7 @@ if(isset($_SESSION['id_usuario'])){
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Cerrar Sesión</a>
+                            <a href="cerrar.php"><i class="fa fa-fw fa-power-off"></i> Cerrar Sesión</a>
                         </li>
                     </ul>
                 </li>
@@ -127,37 +127,36 @@ if(isset($_SESSION['id_usuario'])){
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Perfil</h4>
+        <h4 class="modal-title">Mi Perfil</h4>
       </div>
       <div class="modal-body">
-        <table>
-            <tr>
-            <td>
-                <?php while ($est=mysqli_fetch_array($estudiante)) { ?>
-                <div>
-                <div>
-                Nombre: <?php echo $est['nombre_usuario']; ?>
-                </div>
-                <div>
-                Tipo Documento: <?php echo $est['tipo_identificacion']; ?>
-                </div>
-                <div>
-                Número documento: <?php echo $est['numero_identificacion']; ?>
-                </div>
-                </div>
-                <?php } ?>
-            </td>
-            <td>
+
                 <div class="container2">
                 <div class="div-img" >
                 <img class="img" src="angie.jpg" title="Angie churosa" alt="Churosa">
                 <div class="text2">ANGIE</div>
                 </div>
                 </div>
-            </td>
-            </tr>
 
-        </table>
+            <br><br><br><br><br><br>
+
+                <?php while ($est=mysqli_fetch_array($estudiante)) { ?>
+                <div class="panel panel-info-m ">
+                <div class="panel-heading">
+                Información Personal
+                </div>
+                <div class="panel-body">
+                Nombre: <?php echo $est['nombre_usuario']; ?>
+                </div>
+                <div class="panel-body">
+                Tipo Documento: <?php echo $est['tipo_identificacion']; ?>
+                </div>
+                <div class="panel-body">
+                Número documento: <?php echo $est['numero_identificacion']; ?>
+                </div>
+                </div>
+                <?php } ?>
+
 
       </div>
       <div class="modal-footer">
