@@ -22,7 +22,7 @@
 		</header>
 <!--////////////
 //////////Aqui termina el menu..Y comienza el contenido-->
-        <center><img src="logo.png" width="1024px" height="720px"></center>
+        <center><img src="logo.png"></center>
 
 
 		<div class="container-fluid">
