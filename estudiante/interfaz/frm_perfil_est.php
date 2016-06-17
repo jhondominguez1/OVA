@@ -13,6 +13,7 @@ session_start();
   <title>Actualizar Información</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/sb-admin.css" rel="stylesheet">  
     <link href="css/plugins/morris.css" rel="stylesheet">
@@ -42,16 +43,18 @@ session_start();
         </nav>
 <br>
 
-        <div class="row">
+            <div class="row">
             <div class="col-md-4">
                 <div class="row>"
                      <div class="table-responsive">
 
+                        
                 </div>
             </div>            
-           
+
             <div class="col-md-8">
-                <div class="panel panel-primary">
+                <div class="panel panel-primary-m">
+
                     <div class="panel-heading"><b>Usuario</b></div>
                     <div class="panel-body">        
 
@@ -67,16 +70,17 @@ session_start();
                 while ($row=mysqli_fetch_array($registroest)){
                 ?>
                 <input type="hidden" name="id_usuario" value="<?php echo $row['id_usuario'];?>"/>
-                        
-                <div class="panel panel-info">
+                     
+
+                <div class="panel panel-info-m">
                 <div class="panel-heading">Documento de Identificación</div>
                   <div class="panel-body"><input type="text" name="tipo_identificacion" required class="form-control" value="<?php echo $row['tipo_identificacion'];?>"/></div>
                 </div>
-                <div class="panel panel-info">
+                <div class="panel panel-info-m">
                   <div class="panel-heading">Número de Identificación</div>
                   <div class="panel-body"><input type="text" name="numero_identificacion" required class="form-control" value="<?php echo $row['numero_identificacion'];?>"/></div>
                 </div>
-                <div class="panel panel-info">
+                <div class="panel panel-info-m">
                   <div class="panel-heading">Nombres y Apellidos</div>
                   <div class="panel-body"><input type="text" name="nombre_usuario" required class="form-control" value="<?php echo $row['nombre_usuario'];?>"/></div>
                 </div>

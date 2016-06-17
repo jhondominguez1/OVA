@@ -5689,8 +5689,8 @@ button.list-group-item-danger.active:focus {
   border-color: #ddd;
 }
 .panel-default > .panel-heading {
-  color: #333;
-  background-color: #f5f5f5;
+  color: #2c1539;
+  background-color: #2c1539;
   border-color: #ddd;
 }
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
@@ -5704,11 +5704,11 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #ddd;
 }
 .panel-primary {
-  border-color: #337ab7;
+  border-color: #101828;
 }
 .panel-primary > .panel-heading {
-  color: #fff;
-  background-color: #337ab7;
+  color: #101828;
+  background-color: #101828;
   border-color: #337ab7;
 }
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
@@ -5739,6 +5739,7 @@ button.list-group-item-danger.active:focus {
 .panel-success > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #d6e9c6;
 }
+
 .panel-info {
   border-color: #bce8f1;
 }
@@ -5757,6 +5758,7 @@ button.list-group-item-danger.active:focus {
 .panel-info > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #bce8f1;
 }
+
 .panel-warning {
   border-color: #faebcc;
 }
