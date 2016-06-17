@@ -5,7 +5,10 @@ if (!isset($_SESSION['id_usuario'])) {
     }
 if (isset($_GET['idl'])) {
     require('conexion.php'); 
-}
+    $l="SELECT cursos.id_curso,cursos.nombre_curso FROM cursos inner join leccion on leccion.id_curso=cursos.id_curso where leccion.id_leccion=".$_GET['idl'];
+    $cl=mysqli_query($conexion,$l) or die("problemas en la 1 consulta".$l);
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,24 +72,19 @@ if (isset($_GET['idl'])) {
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                   
+                    <?php
+                         while ($lec=mysqli_fetch_array($cl)){
+                           
+                    ?>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                        </ul>
+                        <a href="curso_estudiante.php?idc=<?php echo $lec['id_curso'];?>" ><i class="fa fa-fw fa-dashboard"></i>Mas Lecciones
+                        </a>
                     </li>
-                    <li class="active">
-                        <a href="blank-page.php"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.php"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                    </li>
+                    <?php
+                    }
+}
+                    ?>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

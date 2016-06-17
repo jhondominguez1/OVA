@@ -29,6 +29,7 @@ if(isset($_SESSION['id_usuario'])){
     <link href="css/sb-admin.css" rel="stylesheet">  
     <link href="css/plugins/morris.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <script type="text/javascript">
       $(document).ready(function() {
@@ -83,12 +84,16 @@ if(isset($_SESSION['id_usuario'])){
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa fa fa-book fa-fw"></i> Mis Cursos <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <?php   
-                                    while ($cusu=mysqli_fetch_array($cursos)){
-                                     echo "<li>
-                                            <a target='formularios' href='curso_estudiante.php?idc=".$cusu[2]."'>".$cusu[0]."</a></li>";              
+                                while ($cusu=mysqli_fetch_array($cursos)){
+                            ?>
+                                    <li>
+                                        <a target="formularios" href="curso_estudiante.php?idc=<?php echo $cusu[2];?>"><i class="fa fa-clipboard"></i><?php echo " ".$cusu[0];?></a>
+                                    </li>              
+                                  
+                            <?php         
                                     }
-                                 }
-                                 ?>
+                               }
+                            ?>
                             <li>
                                 <a href="#">Dropdown Item</a>
                             </li>
