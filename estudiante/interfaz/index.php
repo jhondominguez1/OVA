@@ -98,9 +98,7 @@ if(isset($_SESSION['id_usuario'])){
                                     }
                                }
                             ?>
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
+                            
                         </ul>
                     </li>
 

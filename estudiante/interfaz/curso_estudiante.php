@@ -48,7 +48,7 @@ if (isset($_GET['idc'])) {
               <!--Brand and toggle get grouped for better mobile display -->
            <div class="navbar-header">
                 
-               <a class="navbar-brand" href="curso_estudiante.php">Bienvenido <?php echo 'al curso '.$_GET['idc'];?></a>
+               <a class="navbar-brand" href="curso_estudiante.php">Bienvenido</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -70,18 +70,26 @@ if (isset($_GET['idc'])) {
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <?php
-                         while ($lec=mysqli_fetch_array($cl1)){
+                   <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa fa fa-book fa-fw"></i> Mis Lecciones <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <?php
+                             while ($lec=mysqli_fetch_array($cl1)){
                            
-                    ?>
-                    <li>
-                        <a href="recurso.php?idl=<?php echo $lec['id_leccion'];?>" ><i class="fa fa-edit"></i><?php echo " ".$lec['nombre_leccion'];?>
-                        </a>
+                            ?>
+                            <li>
+                                <a href="recurso.php?idl=<?php echo $lec['id_leccion'];?>" ><i class="fa fa-edit"></i><?php echo " ".$lec['nombre_leccion'];?>
+                                </a>
+                            </li>
+                            <?php
+                            }
+        }
+                            ?>
+                            
+                        </ul>
                     </li>
-                    <?php
-                    }
-}
-                    ?>
+
+                    
                    
                 </ul>
             </div>

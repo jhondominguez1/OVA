@@ -53,6 +53,7 @@ if (isset($_GET['idl'])) {
               <!--Brand and toggle get grouped for better mobile display -->
            <div class="navbar-header"> 
                <ul class="nav navbar-nav ">
+                                   
                 <?php
                          while ($lec=mysqli_fetch_array($cl)){
                            
@@ -88,17 +89,23 @@ if (isset($_GET['idl'])) {
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                     <?php
-                         while ($rec2=mysqli_fetch_array($cr2)){
-                           
-                    ?>
+                    <li><a href="#">Recuros Disponibles</a></li>
+                    
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-dashboard"></i><?php echo $rec2['nombre_recurso'];?></a>                        
-                    </li>
-                    <?php
-                    }
+                        <ul>
+                     <?php
+                           while ($rec2=mysqli_fetch_array($cr2)){
 
-                    ?>
+                           ?>
+                           <li>
+                               <a href="#"><i class="fa fa-check-square-o"></i><?php echo " ".$rec2['nombre_recurso'];?></a>                        
+                           </li>
+                           <?php
+                           }
+
+                           ?>
+                        </ul>
+                    </li>
                     
                 </ul>
             </div>
@@ -118,7 +125,8 @@ if (isset($_GET['idl'])) {
                            
                     ?>
                     <li>
-                        <i class="fa fa-fw fa-dashboard"></i><?php echo $rec['nombre_recurso'];?>
+                        <h1></i><?php echo $rec['nombre_recurso'];?></h1>
+                        
                         
                     </li>
                     <?php
