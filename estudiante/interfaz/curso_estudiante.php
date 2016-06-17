@@ -113,17 +113,19 @@ if (isset($_GET['idc'])) {
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            esto es el espacio en blanco
-                            <small>Subheading</small>
+                            <?php
+                            $cv="SELECT cursos.nombre_curso, cursos.descripcion_curso, usuarios.nombre_usuario FROM cursos inner join asignacion_docentes on cursos.id_curso=asignacion_docentes.id_curso inner join usuarios on usuarios.id_usuario=asignacion_docentes.id_usuario where cursos.id_curso=".$_GET['idc'];
+                            $cvc=mysqli_query($conexion,$cv) or die("problemas en la 1 consulta".$cv);
+                            while ($l=mysqli_fetch_array($cvc)){
+                                echo ' '.$l['nombre_curso']."<br>";
+                                echo ' '.$l['descripcion_curso']."</h1><br>";
+                                echo ' Docente'.$l['nombre_usuario']."<br>";
+                            
+                            }
+                            ?>
                         </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
+                        
+                        
                     </div>
                 </div>
                 <!-- /.row -->
