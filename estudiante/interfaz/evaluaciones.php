@@ -7,9 +7,9 @@ if (isset($_GET['idl'])) {
     require('conexion.php'); 
     $l="SELECT cursos.id_curso,cursos.nombre_curso FROM cursos inner join leccion on leccion.id_curso=cursos.id_curso where leccion.id_leccion=".$_GET['idl'];
     $cl=mysqli_query($conexion,$l) or die("problemas en la 1 consulta".$l);
-    $r="SELECT * SELECT * FROM evaluacion inner join leccion on leccion.id_leccion=evaluacion.id_leccion inner join evaluaciones_preguntas on evaluaciones_preguntas.id_evaluacion=evaluacion.id_evaluacion inner join preguntas on evaluaciones_preguntas.id_pregunta=preguntas.id_pregunta inner join preguntas_respuestas on preguntas_respuestas.id_pregunta=preguntas.id_pregunta inner join respuestas on preguntas_respuestas.id_respuesta=respuestas.id_respuesta where leccion.id_leccion=".$_GET['idl'];
+    $r="SELECT * FROM evaluacion inner join leccion on leccion.id_leccion=evaluacion.id_leccion inner join evaluaciones_preguntas on evaluaciones_preguntas.id_evaluacion=evaluacion.id_evaluacion inner join preguntas on evaluaciones_preguntas.id_pregunta=preguntas.id_pregunta inner join preguntas_respuestas on preguntas_respuestas.id_pregunta=preguntas.id_pregunta inner join respuestas on preguntas_respuestas.id_respuesta=respuestas.id_respuesta where leccion.id_leccion=".$_GET['idl'];
     $cr=mysqli_query($conexion,$r) or die("problemas en la 1 consulta".$r);
-     $r2="SELECT * SELECT * FROM evaluacion inner join leccion on leccion.id_leccion=evaluacion.id_leccion inner join evaluaciones_preguntas on evaluaciones_preguntas.id_evaluacion=evaluacion.id_evaluacion inner join preguntas on evaluaciones_preguntas.id_pregunta=preguntas.id_pregunta inner join preguntas_respuestas on preguntas_respuestas.id_pregunta=preguntas.id_pregunta inner join respuestas on preguntas_respuestas.id_respuesta=respuestas.id_respuesta where leccion.id_leccion=".$_GET['idl'];
+     $r2="SELECT * FROM evaluacion inner join leccion on leccion.id_leccion=evaluacion.id_leccion inner join evaluaciones_preguntas on evaluaciones_preguntas.id_evaluacion=evaluacion.id_evaluacion inner join preguntas on evaluaciones_preguntas.id_pregunta=preguntas.id_pregunta inner join preguntas_respuestas on preguntas_respuestas.id_pregunta=preguntas.id_pregunta inner join respuestas on preguntas_respuestas.id_respuesta=respuestas.id_respuesta where leccion.id_leccion=".$_GET['idl'];
     $cr2=mysqli_query($conexion,$r2) or die("problemas en la 1 consulta".$r2);
 
 ?>
@@ -93,7 +93,7 @@ if (isset($_GET['idl'])) {
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li><a href="#">Recuros Disponibles</a></li>
+                    <li><a href="#">Evaluaciones Disponibles</a></li>
                     
                     <li>
                         <ul>
@@ -102,7 +102,7 @@ if (isset($_GET['idl'])) {
 
                            ?>
                            <li>
-                               <a href="#"><i class="fa fa-check-square-o"></i><?php echo " ".$rec2['nombre_recurso'];?></a>                        
+                               <a href="#"><i class="fa fa-check-square-o"></i><?php echo " ".$rec2['nombre_evaluacion'];?></a>                        
                            </li>
                            <?php
                            }
