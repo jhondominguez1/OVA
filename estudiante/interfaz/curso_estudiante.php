@@ -85,7 +85,7 @@ if (isset($_GET['idc'])) {
                                 
                                     </li>
                                     <li>
-                                <a href="evaluacion.php?idl=<?php echo $lec['id_leccion'];?>" ><i class="fa fa-edit"></i>Evaluaciones </a>
+                                <a href="evaluaciones.php?idl=<?php echo $lec['id_leccion'];?>" ><i class="fa fa-edit"></i>Evaluaciones </a>
                                     </li>
                                 </ul>
                     </li>           
@@ -117,9 +117,9 @@ if (isset($_GET['idc'])) {
                             $cv="SELECT cursos.nombre_curso, cursos.descripcion_curso, usuarios.nombre_usuario FROM cursos inner join asignacion_docentes on cursos.id_curso=asignacion_docentes.id_curso inner join usuarios on usuarios.id_usuario=asignacion_docentes.id_usuario where cursos.id_curso=".$_GET['idc'];
                             $cvc=mysqli_query($conexion,$cv) or die("problemas en la 1 consulta".$cv);
                             while ($l=mysqli_fetch_array($cvc)){
-                                echo ' '.$l['nombre_curso']."<br>";
-                                echo ' '.$l['descripcion_curso']."</h1><br>";
-                                echo ' Docente'.$l['nombre_usuario']."<br>";
+                                echo ' '.$l['nombre_curso']."</h1><br>";
+                                echo ' '.$l['descripcion_curso']."<br><br>";
+                                echo ' Docente: '.$l['nombre_usuario']."<br>";
                             
                             }
                             ?>

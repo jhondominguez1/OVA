@@ -117,32 +117,41 @@ if (isset($_GET['idl'])) {
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
+                
+                       
                             <?php
                          while ($rec=mysqli_fetch_array($cr)){
                            
                     ?>
-                    <li>
-                        <h1></i><?php echo $rec['nombre_recurso'];?></h1>
-                        
-                        
-                    </li>
+            <div data-rol="row">            
+                        <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="modal-header" align="center">
+                  <h2 align="center"><?php echo $rec['nombre_recurso'];?></h2>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                <div class="form-group">
+                    <label for="usrname"> Link </label><br>
+                  <label for="usrname"><?php echo $rec['link_recurso'];?> </label>
+                  
+                </div>
+                <div class="form-group">
+                    <label for="usrname">Tipo de recurso</label><br>
+                  <label for="usrname"><?php echo $rec['nombre_tipo_recurso'];?> </label>
+                </div>
+                    
+                </div>
+            </div>    
+                    <div class="col-md-2"></div>
+            </div>
+                    
+                    
                     <?php
+                    
                     }
 }
                     ?>
-                            <small>Subheading</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
+                        
                     </div>
                 </div>
                 <!-- /.row -->

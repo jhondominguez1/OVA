@@ -7,9 +7,9 @@ if (isset($_GET['idl'])) {
     require('conexion.php'); 
     $l="SELECT cursos.id_curso,cursos.nombre_curso FROM cursos inner join leccion on leccion.id_curso=cursos.id_curso where leccion.id_leccion=".$_GET['idl'];
     $cl=mysqli_query($conexion,$l) or die("problemas en la 1 consulta".$l);
-    $r="SELECT * FROM evaluacion inner join tipos_recursos on recursos.id_tipo_recurso=tipos_recursos.id_tipo_recurso inner join leccion on leccion.id_leccion=recursos.id_leccion where leccion.id_leccion=".$_GET['idl'];
+    $r="SELECT * SELECT * FROM evaluacion inner join leccion on leccion.id_leccion=evaluacion.id_leccion inner join evaluaciones_preguntas on evaluaciones_preguntas.id_evaluacion=evaluacion.id_evaluacion inner join preguntas on evaluaciones_preguntas.id_pregunta=preguntas.id_pregunta inner join preguntas_respuestas on preguntas_respuestas.id_pregunta=preguntas.id_pregunta inner join respuestas on preguntas_respuestas.id_respuesta=respuestas.id_respuesta where leccion.id_leccion=".$_GET['idl'];
     $cr=mysqli_query($conexion,$r) or die("problemas en la 1 consulta".$r);
-    $r2="SELECT * FROM recursos inner join tipos_recursos on recursos.id_tipo_recurso=tipos_recursos.id_tipo_recurso inner join leccion on leccion.id_leccion=recursos.id_leccion where leccion.id_leccion=".$_GET['idl'];
+     $r2="SELECT * SELECT * FROM evaluacion inner join leccion on leccion.id_leccion=evaluacion.id_leccion inner join evaluaciones_preguntas on evaluaciones_preguntas.id_evaluacion=evaluacion.id_evaluacion inner join preguntas on evaluaciones_preguntas.id_pregunta=preguntas.id_pregunta inner join preguntas_respuestas on preguntas_respuestas.id_pregunta=preguntas.id_pregunta inner join respuestas on preguntas_respuestas.id_respuesta=respuestas.id_respuesta where leccion.id_leccion=".$_GET['idl'];
     $cr2=mysqli_query($conexion,$r2) or die("problemas en la 1 consulta".$r2);
 
 ?>
@@ -128,25 +128,33 @@ if (isset($_GET['idl'])) {
                          while ($rec=mysqli_fetch_array($cr)){
                            
                     ?>
-                    <li>
-                        <h1></i><?php echo $rec['nombre_recurso'];?></h1>
-                        
-                        
-                    </li>
+                   
+                      <div data-rol="row">            
+                        <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="modal-header" align="center">
+                  <h2 align="center"><?php echo $rec['nombre_evaluacion'];?></h2>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                <div class="form-group">
+                    <label for="usrname"> pregunta</label><br>
+                  <label for="usrname"><?php echo $rec['pregunta'];?> </label>
+                  
+                </div>
+                <div class="form-group">
+                    <label for="usrname">respuesta</label><br>
+                  <label for="usrname"><?php echo $rec['respuesta'];?> </label>
+                </div>
+                    
+                </div>
+            </div>    
+                    <div class="col-md-2"></div>
+            </div>
                     <?php
                     }
 }
                     ?>
-                            <small>Subheading</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
+                            
                     </div>
                 </div>
                 <!-- /.row -->
