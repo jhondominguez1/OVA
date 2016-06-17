@@ -13,6 +13,10 @@ if(isset($_SESSION['id_usuario'])){
                 inner join usuarios on asignacion_estudiantes.id_usuario=usuarios.id_usuario 
                 inner join roles on roles.id_rol=usuarios.id_rol  where usuarios.id_usuario=".$id_usu;
      $cursos=mysqli_query($conexion,$cscursos) or die("problemas en la 1 consulta".$cscursos);
+
+     $perfil="SELECT * FROM usuarios 
+              where usuarios.id_usuario=".$id_usu;
+     $estudiante=mysqli_query($conexion,$perfil) or die("problemas en la 1 consulta".$perfil);
 ?>
 <html lang="en">
 
@@ -60,7 +64,7 @@ if(isset($_SESSION['id_usuario'])){
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo " ".$_SESSION['nombre_usuario'];?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Ver Perfil</a>
+                            <a href="#" type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-fw fa-user"></i> Ver Perfil</a>
                         </li>
                         <li>
                         <!-- se daño el anterior por eso cambie el formulari -->
@@ -108,13 +112,73 @@ if(isset($_SESSION['id_usuario'])){
       </nav>
 
 <div class="mg principal"><iframe class="sm" style="width: 90%; height: 95%" name="formularios"></iframe></div>
-        
+
+<!-- Ver perfil -->
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+
+
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Perfil</h4>
+      </div>
+      <div class="modal-body">
+        <table>
+            <tr>
+            <td>
+                <?php while ($est=mysqli_fetch_array($estudiante)) { ?>
+                <div>
+                <div>
+                Nombre: <?php echo $est['nombre_usuario']; ?>
+                </div>
+                <div>
+                Tipo Documento: <?php echo $est['tipo_identificacion']; ?>
+                </div>
+                <div>
+                Número documento: <?php echo $est['numero_identificacion']; ?>
+                </div>
+                </div>
+                <?php } ?>
+            </td>
+            <td>
+                <div class="container2">
+                <div class="div-img" >
+                <img class="img" src="angie.jpg" title="Angie churosa" alt="Churosa">
+                <div class="text2">ANGIE</div>
+                </div>
+                </div>
+            </td>
+            </tr>
+
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
          
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script> 
     <script src="js/plugins/morris/raphael.min.js"></script>
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
+
+
+
+
+
 
 </body>
 

@@ -345,7 +345,7 @@ fieldset[disabled] .btn-primary.focus {
   background-color: #fff;
 }
 /*efecto para imagen */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
 .transition {
   -webkit-transition: all 500ms ease-in-out;
   -moz-transition: all 500ms ease-in-out;
@@ -353,8 +353,8 @@ fieldset[disabled] .btn-primary.focus {
   -o-transition: all 500ms ease-in-out;
 }
 .container2 {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   position: absolute;
   left: 0;
   right: 0;
@@ -390,8 +390,9 @@ fieldset[disabled] .btn-primary.focus {
   -ms-transition: all 500ms ease-in-out;
   -o-transition: all 500ms ease-in-out;
 }
-.div-img .text {
-  font-family: 'Open Sans';
+.div-img .text2 {
+  color: blue;
+
   position: absolute;
   z-index: -1;
   display: block;
@@ -418,6 +419,7 @@ fieldset[disabled] .btn-primary.focus {
   -o-transition: all 500ms ease-in-out;
 }
 .div-img:hover .img {
+    background-color: rgba(0, 0, 0, 0.3);
   -webkit-transform: 0px -30px 0.5;
   -moz-transform: 0px -30px 0.5;
   -o-transform: 0px -30px 0.5;
@@ -430,7 +432,8 @@ fieldset[disabled] .btn-primary.focus {
   -ms-transform: translate(0px, -30px) scale(0.5);
   border-radius: 50%;
 }
-.div-img:hover .text {
+.div-img:hover .text2 {
+    color: blue;
   -webkit-transform: 0px 0px 2;
   -moz-transform: 0px 0px 2;
   -o-transform: 0px 0px 2;
