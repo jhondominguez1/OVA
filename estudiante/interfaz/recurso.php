@@ -7,6 +7,8 @@ if (isset($_GET['idl'])) {
     require('conexion.php'); 
     $l="SELECT cursos.id_curso,cursos.nombre_curso FROM cursos inner join leccion on leccion.id_curso=cursos.id_curso where leccion.id_leccion=".$_GET['idl'];
     $cl=mysqli_query($conexion,$l) or die("problemas en la 1 consulta".$l);
+    $r="SELECT * FROM recursos inner join tipos_recursos on recursos.id_tipo_recurso=tipos_recursos.id_tipo_recurso inner join leccion on leccion.id_leccion=recursos.id_leccion where leccion.id_leccion=".$_GET['idl'];
+    $cr=mysqli_query($conexion,$r) or die("problemas en la 1 consulta".$r);
     
 
 ?>
@@ -82,7 +84,7 @@ if (isset($_GET['idl'])) {
                     </li>
                     <?php
                     }
-}
+
                     ?>
                     
                 </ul>
@@ -98,7 +100,18 @@ if (isset($_GET['idl'])) {
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            esto es el espacio en blanco
+                            <?php
+                         while ($rec=mysqli_fetch_array($cr)){
+                           
+                    ?>
+                    <li>
+                        <i class="fa fa-fw fa-dashboard"></i><?php echo $rec['nombre_recurso'];?>
+                        
+                    </li>
+                    <?php
+                    }
+}
+                    ?>
                             <small>Subheading</small>
                         </h1>
                         <ol class="breadcrumb">
